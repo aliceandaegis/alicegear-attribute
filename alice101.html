@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>アリス・ギア・アイギス 属性出力キャラクター対応表</title>
+  <script src="./jquery.min.js"></script>
+  <script>
+$(function() {
+
+/* 更新情報 必要に応じて書き換えてください */
+  var version = "Ver 1.0.1 | UPDATE:2020/06/14";
+
+/*
+  { ... },
+  でキャラデータがワンセット。各項目は下記の通り。
+  id      = 番号(101～FAGコラボ、201～SOLコラボ、301～ｽﾄﾗｲｸｳｨｯﾁｰｽﾞ、401～ﾊﾞﾄﾙｶﾞｰﾙﾊｲｽｸｰﾙ、501～ﾃﾞｯﾄﾞｵｱｱﾗｲﾌﾞ)
+  type    = 1=放出特化、2=特質放出、3=変質放出、4=出力変性、5=出力特性
+  src     = 画像ファイル名
+  name    = キャラクター名
+  category = アナザーは10、コラボは99、それ以外は空欄
+
+  ※画像データは /img/ フォルダに格納してください。
+  ※画像ファイルは縦111px、横111pxで作成しています。
+  ※srcの画像ファイル名と /img/フォルダに入れた画像名は同じにしてください。
+  ※アナザーキャラ画像名は another-キャラ名 と暫定設定しています。
+  ※その他キャラ画像名は normal- キャラ名 と暫定設定しています。
+*/
+/* ↓↓↓↓ここからキャラクターデータ↓↓↓↓ */
+  var data = [/*キャラクターデータ*/
+
+    {
+      "id": "1",
+      "type": "1",
+      "src": "normal-yotsuyu.png",
+      "name": "比良坂 夜露",
+      "category": ""
+    },
+    {
+      "id": "1",
+      "type": "3",
+      "src": "another-yotsuyu.png",
+      "name": "比良坂 夜露 / 勇躍",
+      "category": "10"
+    },
+    {
+      "id": "2",
+      "type": "1",
+      "src": "normal-shitara.png",
+      "name": "兼志谷 シタラ",
+      "category": ""
+    },
+    {
+      "id": "2",
+      "type": "4",
+      "src": "another-shitara.png",
+      "name": "兼志谷 シタラ / 天機",
+      "category": "10"
+    },
+    {
+      "id": "3",
+      "type": "5",
+      "src": "normal-fumika.png",
+      "name": "百科 文嘉",
+      "category": ""
+    },
+    {
+      "id": "3",
+      "type": "3",
+      "src": "another-fumika.png",
+      "name": "百科 文嘉 / 智将",
+      "category": "10"
+    },
+    {
+      "id": "4",
+      "type": "5",
+      "src": "normal-kaede.png",
+      "name": "吾妻 楓",
+      "category": ""
+    },
+    {
+      "id": "4",
+      "type": "3",
+      "src": "another-kaede.png",
+      "name": "吾妻 楓 / 皆伝",
+      "category": "10"
+    },
+    {
+      "id": "5",
+      "type": "5",
+      "src": "normal-rin.png",
+      "name": "日向 リン",
+      "category": ""
+    },
+    {
+      "id": "5",
+      "type": "3",
+      "src": "another-rin.png",
+      "name": "日向 リン / 奔放",
+      "category": "10"
+    },
+    {
+      "id": "6",
+      "type": "1",
+      "src": "normal-rei.png",
+      "name": "小鳥遊 怜",
+      "category": ""
+    },
+    {
+      "id": "6",
+      "type": "4",
+      "src": "another-rei.png",
+      "name": "小鳥遊 怜 / 無常",
+      "category": "10"
+    },
+    {
+      "id": "7",
+      "type": "1",
+      "src": "normal-aika.png",
+      "name": "相河 愛花",
+      "category": ""
+    },
+    {
+      "id": "7",
+      "type": "4",
+      "src": "another-aika.png",
+      "name": "相河 愛花 / 仁愛",
+      "category": "10"
+    },
+    {
+      "id": "8",
+      "type": "5",
+      "src": "normal-ayaka.png",
+      "name": "一条 綾香",
+      "category": ""
+    },
+    {
+      "id": "8",
+      "type": "3",
+      "src": "another-ayaka.png",
+      "name": "一条 綾香 / 英俊",
+      "category": "10"
+    },
+    {
+      "id": "9",
+      "type": "1",
+      "src": "normal-yumi.png",
+      "name": "四谷 ゆみ",
+      "category": ""
+    },
+    {
+      "id": "9",
+      "type": "4",
+      "src": "another-yumi.png",
+      "name": "四谷 ゆみ / 絢爛",
+      "category": "10"
+    },
+    {
+      "id": "10",
+      "type": "1",
+      "src": "normal-eri.png",
+      "name": "依城 えり",
+      "category": ""
+    },
+    {
+      "id": "10",
+      "type": "3",
+      "src": "another-eri.png",
+      "name": "依城 えり / 清廉",
+      "category": "10"
+    },
+    {
+      "id": "11",
+      "type": "5",
+      "src": "normal-virginia.png",
+      "name": "バージニア・G",
+      "category": ""
+    },
+    {
+      "id": "11",
+      "type": "2",
+      "src": "another-virginia.png",
+      "name": "バージニア・G / MOBIUS",
+      "category": "10"
+    },
+    {
+      "id": "12",
+      "type": "5",
+      "src": "normal-koyui.png",
+      "name": "大関 小結",
+      "category": ""
+    },
+    {
+      "id": "12",
+      "type": "3",
+      "src": "another-koyui.png",
+      "name": "大関 小結 / 豊潤",
+      "category": "10"
+    },
+    {
+      "id": "13",
+      "type": "5",
+      "src": "normal-mutsumi.png",
+      "name": "小芦 睦海",
+      "category": ""
+    },
+    {
+      "id": "13",
+      "type": "3",
+      "src": "another-mutsumi.png",
+      "name": "小芦 睦海 / 剛毅",
+      "category": "10"
+    },
+    {
+      "id": "14",
+      "type": "5",
+      "src": "normal-mai.png",
+      "name": "二子玉 舞",
+      "category": ""
+    },
+    {
+      "id": "14",
+      "type": "2",
+      "src": "another-mai.png",
+      "name": "二子玉 舞 / 繊麗",
+      "category": "10"
+    },
+    {
+      "id": "15",
+      "type": "4",
+      "src": "normal-serina.png",
+      "name": "新谷 芹菜",
+      "category": ""
+    },
+    {
+      "id": "15",
+      "type": "3",
+      "src": "another-serina.png",
+      "name": "新谷 芹菜 / 燐光",
+      "category": "10"
+    },
+    {
+      "id": "16",
+      "type": "3",
+      "src": "normal-anna.png",
+      "name": "宇佐元 杏奈",
+      "category": ""
+    },
+    {
+      "id": "16",
+      "type": "1",
+      "src": "another-anna.png",
+      "name": "宇佐元 杏奈 / 希求",
+      "category": "10"
+    },
+    {
+      "id": "17",
+      "type": "3",
+      "src": "normal-meika.png",
+      "name": "萬場 盟華",
+      "category": ""
+    },
+    {
+      "id": "17",
+      "type": "1",
+      "src": "another-meika.png",
+      "name": "萬場 盟華 / 極彩",
+      "category": "10"
+    },
+    {
+      "id": "18",
+      "type": "3",
+      "src": "normal-asuka.png",
+      "name": "文島 明日翔",
+      "category": ""
+    },
+    {
+      "id": "18",
+      "type": "5",
+      "src": "another-asuka.png",
+      "name": "文島 明日翔 / 福音",
+      "category": "10"
+    },
+    {
+      "id": "19",
+      "type": "4",
+      "src": "normal-mari.png",
+      "name": "神宮寺 真理",
+      "category": ""
+    },
+    {
+      "id": "19",
+      "type": "2",
+      "src": "another-mari.png",
+      "name": "神宮寺 真理 / 孤影",
+      "category": "10"
+    },
+    {
+      "id": "20",
+      "type": "4",
+      "src": "normal-raiya.png",
+      "name": "蛙坂 来弥",
+      "category": ""
+    },
+    {
+      "id": "20",
+      "type": "1",
+      "src": "another-raiya.png",
+      "name": "蛙坂 来弥 / 残火",
+      "category": "10"
+    },
+    {
+      "id": "21",
+      "type": "1",
+      "src": "normal-yayoi.png",
+      "name": "藤野 やよい",
+      "category": ""
+    },
+    {
+      "id": "21",
+      "type": "4",
+      "src": "another-yayoi.png",
+      "name": "藤野 やよい /",
+      "category": "10"
+    },
+    {
+      "id": "22",
+      "type": "1",
+      "src": "normal-toka.png",
+      "name": "下落合 桃歌",
+      "category": ""
+    },
+    {
+      "id": "22",
+      "type": "4",
+      "src": "another-toka.png",
+      "name": "下落合 桃歌 / 明星",
+      "category": "10"
+    },
+    {
+      "id": "23",
+      "type": "4",
+      "src": "normal-hongfa.png",
+      "name": "王 紅花",
+      "category": ""
+    },
+    {
+      "id": "23",
+      "type": "2",
+      "src": "another-hongfa.png",
+      "name": "王 紅花 / 紅蓮",
+      "category": "10"
+    },
+    {
+      "id": "24",
+      "type": "3",
+      "src": "normal-kanade.png",
+      "name": "仁紀藤 奏",
+      "category": ""
+    },
+    {
+      "id": "25",
+      "type": "5",
+      "src": "normal-shiina.png",
+      "name": "州天頃 椎奈",
+      "category": ""
+    },
+    {
+      "id": "26",
+      "type": "1",
+      "src": "normal-chieri.png",
+      "name": "紺堂 地衛理",
+      "category": ""
+    },
+    {
+      "id": "27",
+      "type": "3",
+      "src": "normal-shanti.png",
+      "name": "サンティ・ラナ",
+      "category": ""
+    },
+    {
+      "id": "27",
+      "type": "1",
+      "src": "another-shanti.png",
+      "name": "サンティ・ラナ / 雄渾",
+      "category": "10"
+    },
+    {
+      "id": "28",
+      "type": "3",
+      "src": "normal-kaoruko.png",
+      "name": "山野 薫子",
+      "category": ""
+    },
+    {
+      "id": "29",
+      "type": "3",
+      "src": "normal-nina.png",
+      "name": "ニーナ・カリーニナ",
+      "category": ""
+    },
+    {
+      "id": "30",
+      "type": "1",
+      "src": "normal-misaki.png",
+      "name": "籠目 深沙希",
+      "category": ""
+    },
+    {
+      "id": "31",
+      "type": "5",
+      "src": "normal-rita.png",
+      "name": "リタ・ヘンシェル",
+      "category": ""
+    },
+    {
+      "id": "32",
+      "type": "1",
+      "src": "normal-sugumi.png",
+      "name": "金潟 すぐみ",
+      "category": ""
+    },
+    {
+      "id": "33",
+      "type": "5",
+      "src": "normal-yasuri.png",
+      "name": "新居目 安里",
+      "category": ""
+    },
+    {
+      "id": "34",
+      "type": "2",
+      "src": "normal-azuki.png",
+      "name": "御蔵座 梓希",
+      "category": ""
+    },
+    {
+      "id": "35",
+      "type": "4",
+      "src": "normal-shirley.png",
+      "name": "シャーリー・オークレイ",
+      "category": ""
+    },
+    {
+      "id": "36",
+      "type": "2",
+      "src": "normal-mirie.png",
+      "name": "御茶ノ水 美里江",
+      "category": ""
+    },
+    {
+      "id": "37",
+      "type": "1",
+      "src": "normal-akane.png",
+      "name": "琴村 朱音",
+      "category": ""
+    },
+    {
+      "id": "38",
+      "type": "1",
+      "src": "normal-amane.png",
+      "name": "琴村 天音",
+      "category": ""
+    },
+    {
+      "id": "39",
+      "type": "4",
+      "src": "normal-tsukasa.png",
+      "name": "二階堂 司",
+      "category": ""
+    },
+    {
+      "id": "40",
+      "type": "4",
+      "src": "normal-itsuri.png",
+      "name": "須賀 乙莉",
+      "category": ""
+    },
+    {
+      "id": "41",
+      "type": "4",
+      "src": "normal-chie.png",
+      "name": "東雲 チヱ",
+      "category": ""
+    },
+    {
+      "id": "42",
+      "type": "2",
+      "src": "normal-fatima.png",
+      "name": "ファティマ・ベトロラム",
+      "category": ""
+    },
+    {
+      "id": "43",
+      "type": "2",
+      "src": "normal-mira.png",
+      "name": "村尾 未羅",
+      "category": ""
+    },
+    {
+      "id": "44",
+      "type": "3",
+      "src": "normal-yui.png",
+      "name": "君影 唯",
+      "category": ""
+    },
+    {
+      "id": "45",
+      "type": "2",
+      "src": "normal-miyuki.png",
+      "name": "千島 美幸",
+      "category": ""
+    },
+    {
+      "id": "46",
+      "type": "5",
+      "src": "normal-yuto.png",
+      "name": "九炉鉄 悠都",
+      "category": ""
+    },
+    {
+      "id": "101",
+      "type": "4",
+      "src": "normal-gourai.png",
+      "name": "轟雷",
+      "category": "99"
+    },
+    {
+      "id": "102",
+      "type": "4",
+      "src": "normal-stylet.png",
+      "name": "スティレット",
+      "category": "99"
+    },
+    {
+      "id": "103",
+      "type": "3",
+      "src": "normal-baselard.png",
+      "name": "バーゼラルド",
+      "category": "99"
+    },
+    {
+      "id": "104",
+      "type": "3",
+      "src": "normal-hresvelgr.png",
+      "name": "フレズヴェルク",
+      "category": "99"
+    },
+    {
+      "id": "201",
+      "type": "5",
+      "src": "normal-raptor.png",
+      "name": "SOLラプター",
+      "category": "99"
+    },
+    {
+      "id": "202",
+      "type": "3",
+      "src": "normal-raptor-strike.png",
+      "name": "SOLラプター[ストライク]",
+      "category": "99"
+    },
+    {
+      "id": "301",
+      "type": "3",
+      "src": "normal-yoshika.png",
+      "name": "宮藤 芳佳",
+      "category": "99"
+    },
+    {
+      "id": "302",
+      "type": "3",
+      "src": "normal-linette.png",
+      "name": "リネット・ビショップ",
+      "category": "99"
+    },
+    {
+      "id": "303",
+      "type": "5",
+      "src": "normal-barkhorn.png",
+      "name": "ゲルトルート・バルクホルン",
+      "category": "99"
+    },
+    {
+      "id": "304",
+      "type": "3",
+      "src": "normal-hartmann.png",
+      "name": "エーリカ・ハルトマン",
+      "category": "99"
+    },
+    {
+      "id": "401",
+      "type": "4",
+      "src": "normal-miki.png",
+      "name": "星月 みき",
+      "category": "99"
+    },
+    {
+      "id": "402",
+      "type": "5",
+      "src": "normal-kurumi.png",
+      "name": "常磐 くるみ",
+      "category": "99"
+    },
+    {
+      "id": "403",
+      "type": "2",
+      "src": "normal-michelle.png",
+      "name": "綿木 ミシェル",
+      "category": "99"
+    },
+    {
+      "id": "404",
+      "type": "3",
+      "src": "normal-sadone.png",
+      "name": "サドネ",
+      "category": "99"
+    },
+    {
+      "id": "501",
+      "type": "4",
+      "src": "normal-marie.png",
+      "name": "マリー・ローズ",
+      "category": "99"
+    },
+    {
+      "id": "502",
+      "type": "5",
+      "src": "normal-kasumi.png",
+      "name": "かすみ",
+      "category": "99"
+    },
+
+  ];
+/* ↑↑↑↑ここまでキャラクターデータ↑↑↑↑ */
+/* 以下は基本編集しなくても大丈夫です */
+
+  data.sort(function(a,b){
+    return (Number(a.id) < Number(b.id) ? -1 : 1);
+  });
+
+  function AliceList(liid,data,type,category) {
+    var
+      collabodata = 0,
+      ulObj = $(liid),
+      len = data.length;
+    for(var i = 0; i < len; i++) {
+      var typed=data[i].type;
+      var categoryed=data[i].category;
+      if(type == typed && category == categoryed){
+        var src='./img/'+data[i].src;
+        var collabo=data[i].category;
+        var collabostr="";
+        var classname="";
+        if(collabo == 99){ classname="collabo"; collabodata++; collabostr='【コラボキャラ】 '; }
+        if(collabodata == 1){
+          var youso = ulObj.children('img').length;
+          if( (youso % 2) != 0 ){
+            ulObj.append('<img src="./img/space.png" class="nosp" />');
+            ulObj.append('<img src="./img/space.png" class="nosp" />');
+            ulObj.append('<img src="./img/space.png" class="nosp" />');
+          }
+          if( (youso % 2) == 0 ){
+            ulObj.append('<img src="./img/space.png" class="nosp" />');
+            ulObj.append('<img src="./img/space.png" class="nosp" />');
+          }
+        }
+        ulObj.append($("<img>").attr({"src":src,"title":data[i].id+'. '+collabostr+data[i].name,"class":classname}));
+      }
+    }
+  }
+
+  AliceList("#tokusei1",data,"1","");
+  AliceList("#tokusei2",data,"2","");
+  AliceList("#tokusei3",data,"3","");
+  AliceList("#tokusei4",data,"4","");
+  AliceList("#tokusei5",data,"5","");
+  AliceList("#tokusei1",data,"1","99");
+  AliceList("#tokusei2",data,"2","99");
+  AliceList("#tokusei3",data,"3","99");
+  AliceList("#tokusei4",data,"4","99");
+  AliceList("#tokusei5",data,"5","99");
+  AliceList("#tokusei1a",data,"1","10");
+  AliceList("#tokusei2a",data,"2","10");
+  AliceList("#tokusei3a",data,"3","10");
+  AliceList("#tokusei4a",data,"4","10");
+  AliceList("#tokusei5a",data,"5","10");
+  $('#version').text(version);
+});
+  </script>
+  <style>
+body {
+  background:#C9E8FC;
+  padding:10px 10px;
+}
+h1 {
+  background:#DC5E9D;
+  color:#FEE517;
+  text-align:center;
+  margin:5px 0 10px;
+  padding:5px 5px 3px 5px;
+  font-size:4.0vw;
+}
+h2 {
+  color:#333;
+  text-align:center;
+  margin:0;
+  padding:10px 0;
+  font-size:3.0vw;
+}
+ul#hosoku {
+  padding:10px 0px;
+  list-style:none;
+  font-size:0;
+  padding:0;
+}
+ul#hosoku:after {
+  content:"";
+  clear:both;
+  display:block;
+}
+ul#hosoku li {
+  background:#fff;
+  display:inline-block;
+  width:40%;
+  border-radius:10px;
+  padding:10px;
+  font-weight:bold;
+  font-size:16px;
+  font-size:3.0vw;
+}
+ul#hosoku li#hosoku1 {
+  float:left;
+  color:#65BFE2;
+}
+ul#hosoku li#hosoku2 {
+  float:right;
+  color:#DC5E9D;
+}
+div#hosoku3 img {
+  padding:10px 0;
+}
+div#hosoku3 img {
+  width:100%;
+}
+
+ul#normal ,
+ul#another ,
+ul#another2 {
+  display:table;
+  display:flex;
+/*  background:#fff;*/
+  list-style:none;
+  font-size:0;
+  padding:0;
+}
+ul#another ,
+ul#another2 {
+  background:#F9DEC9;
+}
+ul#normal:after ,
+ul#another:after ,
+ul#another2:after {
+  content:"";
+  clear:both;
+  display:block;
+}
+ul#normal li ,
+ul#another li ,
+ul#another2 li {
+  display:inline-block;
+  width:20%;
+  padding:0px;
+  padding-bottom:10px;
+  font-size:0px;
+  float:left;
+  text-align:center;
+  box-sizing:border-box;
+  border-right:2px solid #DC5E9D;
+}
+ul#normal li:after ,
+ul#another li:after ,
+ul#another2 li:after {
+  content:"";
+  clear:both;
+  display:block;
+}
+ul#normal li:nth-child(5) ,
+ul#another li:nth-child(5) ,
+ul#another2 li:nth-child(5) {
+  border-right:2px solid transparent;
+}
+ul#normal li img ,
+ul#another li img ,
+ul#another2 li img {
+  width:40%;
+  float:left;
+  box-sizing:border-box;
+  border:1px solid #999;
+}
+ul#normal li img.nosp ,
+ul#another li img.nosp ,
+ul#another2 li img.nosp {
+  border:1px solid transparent;
+}
+ul#normal li img:nth-child(even) ,
+ul#another li img:nth-child(even) {
+  margin:5% 5% 0 7%;
+}
+ul#normal li img:nth-child(odd) ,
+ul#another li img:nth-child(odd) {
+  margin:5% 5% 0 0;
+}
+ul#normal li img:nth-of-type(1) {
+  margin-top:0;
+}
+ul#normal li img:nth-of-type(2) {
+  margin-top:0;
+}
+ul#normal li#tokusei1 h2 ,
+ul#another li#tokusei1a h2 {
+  color:#0899E8;
+}
+ul#normal li#tokusei2 h2 ,
+ul#another li#tokusei2a h2 {
+  color:#0AADE8;
+}
+ul#normal li#tokusei3 h2 ,
+ul#another li#tokusei3a h2 {
+  color:#8D8FC0;
+}
+ul#normal li#tokusei4 h2 ,
+ul#another li#tokusei4a h2 {
+  color:#E45197;
+}
+ul#normal li#tokusei5 h2 ,
+ul#another li#tokusei5a h2 {
+  color:#E0057B;
+}
+ul#another2 li#tokusei5a span {
+  display:block;
+  width:100%;
+  color:#E0057B;
+  font-size:2.5vw;
+  font-weight:bold;
+  text-shadow:1px 1px 0 #fff,-1px 1px 0 #fff,1px -1px 0 #fff,-1px -1px 0 #fff;
+}
+ul#another li h2 {
+  display:none;
+}
+archive#version {
+  display:block;
+  color:#666;
+  text-align:right;
+  font-size:1vw;
+}
+  </style>
+</head>
+
+<body>
+
+<archive id="version"></archive>
+
+<archive id="header">
+  <h1>属性出力キャラクター対応表</h1>
+
+  <ul id="hosoku">
+    <li id="hosoku1">左に行くほど弱点を突いた時のダメージが大きく、受けるダメージも多い</li>
+    <li id="hosoku2">右に行くほど物理攻撃が強く、様々な属性に対応しやすい</li>
+  </ul>
+
+  <div id="hosoku3"><img src="./img/yazirushi.png" /></div>
+</archive>
+
+<archive id="list">
+  <!-- ノーマル出力用 -->
+  <ul id="normal">
+
+    <li id="tokusei1">
+      <h2>放出特化</h2>
+    </li>
+
+    <li id="tokusei2">
+      <h2>特質放出</h2>
+    </li>
+
+    <li id="tokusei3">
+      <h2>変質放出</h2>
+    </li>
+
+    <li id="tokusei4">
+      <h2>出力変性</h2>
+    </li>
+
+    <li id="tokusei5">
+      <h2>出力特性</h2>
+    </li>
+
+  </ul>
+
+
+  <!-- アナザー出力用 -->
+  <ul id="another">
+
+    <li id="tokusei1a">
+      <h2>放出特化</h2>
+    </li>
+
+    <li id="tokusei2a">
+      <h2>特質放出</h2>
+    </li>
+
+    <li id="tokusei3a">
+      <h2>変質放出</h2>
+    </li>
+
+    <li id="tokusei4a">
+      <h2>出力変性</h2>
+    </li>
+
+    <li id="tokusei5a">
+      <h2>出力特性</h2>
+    </li>
+
+  </ul>
+
+  <!-- アナザー文字出力用 -->
+  <ul id="another2">
+
+    <li id="tokusei1a">
+    </li>
+
+    <li id="tokusei2a">
+    </li>
+
+    <li id="tokusei3a">
+    </li>
+
+    <li id="tokusei4a">
+    </li>
+
+    <li id="tokusei5a">
+      <span>アナザー</span>
+    </li>
+  </ul>
+</archive>
+
+</body>
+</html>
