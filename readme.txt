@@ -1,15 +1,15 @@
 
 /*
 
-  alice.html ��UTF-8�̕����R�[�h�Ή��e�L�X�g�G�f�B�^�ŊJ���ĕҏW���Ă��������B
+  alice101.html をUTF-8の文字コード対応テキストエディタで開いて編集してください。
 
-  /img/�t�H���_�ɃL�����摜�͊i�[���Ă��������B
+  /img/フォルダにキャラ画像は格納してください。
 
-  �摜�t�@�C���͏c111px�A��111px�ō쐬���Ă��܂��B
+  画像ファイルは縦111px、横111pxで作成しています。
 
-  alice.html ��Chrome��Firefox�̃u���E�U�Œ��ڊJ���Ă����삵�܂��B
-  ���L�������X�g��javascript�ŏo�͂����Ă��܂��B
-  ��alice�t�H���_���̃t�@�C�����ꎮ�����Ă����Ԃ̂݁B
+  alice101.html はChromeやFirefoxのブラウザで直接開いても動作します。
+  ※キャラリストはjavascriptで出力させています。
+  ※aliceフォルダ内のファイルが一式揃っている状態のみ。
 
 */
 
