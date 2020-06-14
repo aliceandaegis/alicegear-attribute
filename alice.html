@@ -10,7 +10,7 @@
 $(function() {
 
 /* 更新情報 必要に応じて書き換えてください */
-  var version = "Ver 1.0.1 | UPDATE:2020/06/14";
+  var version = "Ver 1.0.2 | UPDATE:2020/06/14";
 
 /*
   { ... },
@@ -21,6 +21,7 @@ $(function() {
   name    = キャラクター名
   category = アナザーは10、コラボは99、それ以外は空欄
 
+  ※キャラクターリストは id 順にて並び替えられます。
   ※画像データは /img/ フォルダに格納してください。
   ※画像ファイルは縦111px、横111pxで作成しています。
   ※srcの画像ファイル名と /img/フォルダに入れた画像名は同じにしてください。
@@ -641,21 +642,19 @@ $(function() {
     return (Number(a.id) < Number(b.id) ? -1 : 1);
   });
 
-  function AliceList(liid,data,type,category) {
+  function AliceList(target_id,target_data,target_type,target_category) {
     var
-      collabodata = 0,
-      ulObj = $(liid),
-      len = data.length;
+      collaboCheck = 0,
+      ulObj = $(target_id),
+      len = target_data.length;
     for(var i = 0; i < len; i++) {
-      var typed=data[i].type;
-      var categoryed=data[i].category;
-      if(type == typed && category == categoryed){
-        var src='./img/'+data[i].src;
-        var collabo=data[i].category;
+      var data_type    =target_data[i].type;
+      var data_category=target_data[i].category;
+      if(target_type == data_type && target_category == data_category){/* 任意のデータだけ出力 */
         var collabostr="";
         var classname="";
-        if(collabo == 99){ classname="collabo"; collabodata++; collabostr='【コラボキャラ】 '; }
-        if(collabodata == 1){
+        if(data_category == 99){ classname="collabo"; collaboCheck++; collabostr='【コラボキャラ】 '; }
+        if(collaboCheck == 1){/* 恒常とコラボの隙間を作成 */
           var youso = ulObj.children('img').length;
           if( (youso % 2) != 0 ){
             ulObj.append('<img src="./img/space.png" class="nosp" />');
@@ -667,29 +666,30 @@ $(function() {
             ulObj.append('<img src="./img/space.png" class="nosp" />');
           }
         }
-        ulObj.append($("<img>").attr({"src":src,"title":data[i].id+'. '+collabostr+data[i].name,"class":classname}));
+        ulObj.append($("<img>").attr({"src":'./img/'+target_data[i].src,"title":target_data[i].id+'. '+collabostr+target_data[i].name,"class":classname}));/* imgタグ生成 */
       }
     }
   }
 
-  AliceList("#tokusei1",data,"1","");
-  AliceList("#tokusei2",data,"2","");
-  AliceList("#tokusei3",data,"3","");
-  AliceList("#tokusei4",data,"4","");
-  AliceList("#tokusei5",data,"5","");
-  AliceList("#tokusei1",data,"1","99");
-  AliceList("#tokusei2",data,"2","99");
-  AliceList("#tokusei3",data,"3","99");
-  AliceList("#tokusei4",data,"4","99");
-  AliceList("#tokusei5",data,"5","99");
-  AliceList("#tokusei1a",data,"1","10");
-  AliceList("#tokusei2a",data,"2","10");
-  AliceList("#tokusei3a",data,"3","10");
-  AliceList("#tokusei4a",data,"4","10");
-  AliceList("#tokusei5a",data,"5","10");
-  $('#version').text(version);
+  AliceList("#tokusei1",data,"1","");/* 放出特化 */
+  AliceList("#tokusei2",data,"2","");/* 特質放出 */
+  AliceList("#tokusei3",data,"3","");/* 変質放出 */
+  AliceList("#tokusei4",data,"4","");/* 出力変性 */
+  AliceList("#tokusei5",data,"5","");/* 出力特性 */
+  AliceList("#tokusei1",data,"1","99");/* 放出特化 コラボ */
+  AliceList("#tokusei2",data,"2","99");/* 特質放出 コラボ */
+  AliceList("#tokusei3",data,"3","99");/* 変質放出 コラボ */
+  AliceList("#tokusei4",data,"4","99");/* 出力変性 コラボ */
+  AliceList("#tokusei5",data,"5","99");/* 出力特性 コラボ */
+  AliceList("#tokusei1a",data,"1","10");/* 放出特化 アナザー */
+  AliceList("#tokusei2a",data,"2","10");/* 特質放出 アナザー */
+  AliceList("#tokusei3a",data,"3","10");/* 変質放出 アナザー */
+  AliceList("#tokusei4a",data,"4","10");/* 出力変性 アナザー */
+  AliceList("#tokusei5a",data,"5","10");/* 出力特性 アナザー */
+  $('#version').text(version);/* version出力 */
 });
   </script>
+
   <style>
 body {
   background:#C9E8FC;
