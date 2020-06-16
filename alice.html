@@ -10,16 +10,25 @@
 $(function() {
 
 /* 更新情報 必要に応じて書き換えてください */
-  var version = "Ver 1.0.2 | UPDATE:2020/06/14";
+  var version = "Ver 1.1.0 | UPDATE:2020/06/16";
 
 /*
   { ... },
   でキャラデータがワンセット。各項目は下記の通り。
-  id      = 番号(101～FAGコラボ、201～SOLコラボ、301～ｽﾄﾗｲｸｳｨｯﾁｰｽﾞ、401～ﾊﾞﾄﾙｶﾞｰﾙﾊｲｽｸｰﾙ、501～ﾃﾞｯﾄﾞｵｱｱﾗｲﾌﾞ)
-  type    = 1=放出特化、2=特質放出、3=変質放出、4=出力変性、5=出力特性
-  src     = 画像ファイル名
-  name    = キャラクター名
+  id       = 番号(101～FAGコラボ、201～SOLコラボ、301～ｽﾄﾗｲｸｳｨｯﾁｰｽﾞ、401～ﾊﾞﾄﾙｶﾞｰﾙﾊｲｽｸｰﾙ、501～ﾃﾞｯﾄﾞｵｱｱﾗｲﾌﾞ)
+  type     = 1=放出特化、2=特質放出、3=変質放出、4=出力変性、5=出力特性
+  src      = 画像ファイル名
+  name     = キャラクター名
   category = アナザーは10、コラボは99、それ以外は空欄
+
+  equip1   = ショット：1=実弾、2=エネルギー弾（複数=12、派生=1/2）
+  equip2   = クロス：3=打撃、4=斬撃（複数の場合=34）
+  equip3   = トップススキル：1=実弾、2=エネルギー弾、3=打撃、4=斬撃、5=補助/回復
+  equip4   = ボトムススキル：1=実弾、2=エネルギー弾、3=打撃、4=斬撃、5=補助/回復
+  sp       = ボトムススキル：1=実弾、2=エネルギー弾、3=打撃、4=斬撃、5=補助/回復
+  ※情報不足でわからないところは ?=不明
+
+  attr     = 1=電撃属性、2=重力属性、3=焼夷属性、4=冷撃属性
 
   ※キャラクターリストは id 順にて並び替えられます。
   ※画像データは /img/ フォルダに格納してください。
@@ -36,6 +45,12 @@ $(function() {
       "type": "1",
       "src": "normal-yotsuyu.png",
       "name": "比良坂 夜露",
+      "equip1": "1/2",
+      "equip2": "3",
+      "equip3": "5",
+      "equip4": "2",
+      "sp": "4",
+      "attr": "1",
       "category": ""
     },
     {
@@ -43,6 +58,12 @@ $(function() {
       "type": "3",
       "src": "another-yotsuyu.png",
       "name": "比良坂 夜露 / 勇躍",
+      "equip1": "1/2",
+      "equip2": "3",
+      "equip3": "5",
+      "equip4": "2",
+      "sp": "2",
+      "attr": "1",
       "category": "10"
     },
     {
@@ -50,6 +71,12 @@ $(function() {
       "type": "1",
       "src": "normal-shitara.png",
       "name": "兼志谷 シタラ",
+      "equip1": "2",
+      "equip2": "3/3",
+      "equip3": "425",
+      "equip4": "2",
+      "sp": "2",
+      "attr": "2",
       "category": ""
     },
     {
@@ -57,6 +84,12 @@ $(function() {
       "type": "4",
       "src": "another-shitara.png",
       "name": "兼志谷 シタラ / 天機",
+      "equip1": "2",
+      "equip2": "3/3",
+      "equip3": "425",
+      "equip4": "2",
+      "sp": "2",
+      "attr": "2",
       "category": "10"
     },
     {
@@ -64,6 +97,12 @@ $(function() {
       "type": "5",
       "src": "normal-fumika.png",
       "name": "百科 文嘉",
+      "equip1": "2/2",
+      "equip2": "3",
+      "equip3": "1",
+      "equip4": "5",
+      "sp": "1",
+      "attr": "4",
       "category": ""
     },
     {
@@ -71,6 +110,12 @@ $(function() {
       "type": "3",
       "src": "another-fumika.png",
       "name": "百科 文嘉 / 智将",
+      "equip1": "2/2",
+      "equip2": "3",
+      "equip3": "1",
+      "equip4": "5",
+      "sp": "15",
+      "attr": "4",
       "category": "10"
     },
     {
@@ -78,6 +123,12 @@ $(function() {
       "type": "5",
       "src": "normal-kaede.png",
       "name": "吾妻 楓",
+      "equip1": "2",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "5",
+      "sp": "2",
+      "attr": "1",
       "category": ""
     },
     {
@@ -85,6 +136,12 @@ $(function() {
       "type": "3",
       "src": "another-kaede.png",
       "name": "吾妻 楓 / 皆伝",
+      "equip1": "2",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "5",
+      "sp": "3",
+      "attr": "1",
       "category": "10"
     },
     {
@@ -92,6 +149,12 @@ $(function() {
       "type": "5",
       "src": "normal-rin.png",
       "name": "日向 リン",
+      "equip1": "1",
+      "equip2": "4/4",
+      "equip3": "45",
+      "equip4": "2",
+      "sp": "4",
+      "attr": "3",
       "category": ""
     },
     {
@@ -99,6 +162,12 @@ $(function() {
       "type": "3",
       "src": "another-rin.png",
       "name": "日向 リン / 奔放",
+      "equip1": "1",
+      "equip2": "4/4",
+      "equip3": "45",
+      "equip4": "2",
+      "sp": "4",
+      "attr": "3",
       "category": "10"
     },
     {
@@ -106,6 +175,12 @@ $(function() {
       "type": "1",
       "src": "normal-rei.png",
       "name": "小鳥遊 怜",
+      "equip1": "2",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "5",
+      "sp": "3",
+      "attr": "4",
       "category": ""
     },
     {
@@ -113,6 +188,12 @@ $(function() {
       "type": "4",
       "src": "another-rei.png",
       "name": "小鳥遊 怜 / 無常",
+      "equip1": "2",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "5",
+      "sp": "25",
+      "attr": "4",
       "category": "10"
     },
     {
@@ -120,6 +201,12 @@ $(function() {
       "type": "1",
       "src": "normal-aika.png",
       "name": "相河 愛花",
+      "equip1": "1/1",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "5",
+      "sp": "5",
+      "attr": "1",
       "category": ""
     },
     {
@@ -127,6 +214,12 @@ $(function() {
       "type": "4",
       "src": "another-aika.png",
       "name": "相河 愛花 / 仁愛",
+      "equip1": "1/1",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "5",
+      "sp": "51",
+      "attr": "1",
       "category": "10"
     },
     {
@@ -134,6 +227,12 @@ $(function() {
       "type": "5",
       "src": "normal-ayaka.png",
       "name": "一条 綾香",
+      "equip1": "1",
+      "equip2": "3/3",
+      "equip3": "1",
+      "equip4": "1",
+      "sp": "3",
+      "attr": "3",
       "category": ""
     },
     {
@@ -141,6 +240,12 @@ $(function() {
       "type": "3",
       "src": "another-ayaka.png",
       "name": "一条 綾香 / 英俊",
+      "equip1": "1",
+      "equip2": "3/3",
+      "equip3": "1",
+      "equip4": "1",
+      "sp": "351",
+      "attr": "3",
       "category": "10"
     },
     {
@@ -148,6 +253,12 @@ $(function() {
       "type": "1",
       "src": "normal-yumi.png",
       "name": "四谷 ゆみ",
+      "equip1": "1",
+      "equip2": "3/32",
+      "equip3": "2",
+      "equip4": "5",
+      "sp": "1",
+      "attr": "2",
       "category": ""
     },
     {
@@ -155,6 +266,12 @@ $(function() {
       "type": "4",
       "src": "another-yumi.png",
       "name": "四谷 ゆみ / 絢爛",
+      "equip1": "1",
+      "equip2": "3/32",
+      "equip3": "2",
+      "equip4": "5",
+      "sp": "352",
+      "attr": "2",
       "category": "10"
     },
     {
@@ -162,6 +279,12 @@ $(function() {
       "type": "1",
       "src": "normal-eri.png",
       "name": "依城 えり",
+      "equip1": "2",
+      "equip2": "3/32",
+      "equip3": "1",
+      "equip4": "5",
+      "sp": "2",
+      "attr": "4",
       "category": ""
     },
     {
@@ -169,6 +292,12 @@ $(function() {
       "type": "3",
       "src": "another-eri.png",
       "name": "依城 えり / 清廉",
+      "equip1": "2",
+      "equip2": "3/32",
+      "equip3": "1",
+      "equip4": "5",
+      "sp": "15",
+      "attr": "4",
       "category": "10"
     },
     {
@@ -176,6 +305,12 @@ $(function() {
       "type": "5",
       "src": "normal-virginia.png",
       "name": "バージニア・G",
+      "equip1": "2/2",
+      "equip2": "3",
+      "equip3": "5",
+      "equip4": "2",
+      "sp": "2",
+      "attr": "3",
       "category": ""
     },
     {
@@ -183,6 +318,12 @@ $(function() {
       "type": "2",
       "src": "another-virginia.png",
       "name": "バージニア・G / MOBIUS",
+      "equip1": "2/2",
+      "equip2": "3",
+      "equip3": "5",
+      "equip4": "2",
+      "sp": "25",
+      "attr": "3",
       "category": "10"
     },
     {
@@ -190,6 +331,12 @@ $(function() {
       "type": "5",
       "src": "normal-koyui.png",
       "name": "大関 小結",
+      "equip1": "2",
+      "equip2": "4/4",
+      "equip3": "1",
+      "equip4": "5",
+      "sp": "4",
+      "attr": "2",
       "category": ""
     },
     {
@@ -197,6 +344,12 @@ $(function() {
       "type": "3",
       "src": "another-koyui.png",
       "name": "大関 小結 / 豊潤",
+      "equip1": "2",
+      "equip2": "4/4",
+      "equip3": "1",
+      "equip4": "5",
+      "sp": "415",
+      "attr": "2",
       "category": "10"
     },
     {
@@ -204,6 +357,12 @@ $(function() {
       "type": "5",
       "src": "normal-mutsumi.png",
       "name": "小芦 睦海",
+      "equip1": "2",
+      "equip2": "4/4",
+      "equip3": "2",
+      "equip4": "2",
+      "sp": "4",
+      "attr": "4",
       "category": ""
     },
     {
@@ -211,6 +370,12 @@ $(function() {
       "type": "3",
       "src": "another-mutsumi.png",
       "name": "小芦 睦海 / 剛毅",
+      "equip1": "2",
+      "equip2": "4/4",
+      "equip3": "2",
+      "equip4": "2",
+      "sp": "452",
+      "attr": "4",
       "category": "10"
     },
     {
@@ -218,6 +383,12 @@ $(function() {
       "type": "5",
       "src": "normal-mai.png",
       "name": "二子玉 舞",
+      "equip1": "2",
+      "equip2": "3/35",
+      "equip3": "5",
+      "equip4": "2",
+      "sp": "3",
+      "attr": "4",
       "category": ""
     },
     {
@@ -225,6 +396,12 @@ $(function() {
       "type": "2",
       "src": "another-mai.png",
       "name": "二子玉 舞 / 繊麗",
+      "equip1": "2",
+      "equip2": "3/35",
+      "equip3": "5",
+      "equip4": "2",
+      "sp": "35",
+      "attr": "4",
       "category": "10"
     },
     {
@@ -232,6 +409,12 @@ $(function() {
       "type": "4",
       "src": "normal-serina.png",
       "name": "新谷 芹菜",
+      "equip1": "1/1",
+      "equip2": "3",
+      "equip3": "5/25",
+      "equip4": "2",
+      "sp": "2",
+      "attr": "2",
       "category": ""
     },
     {
@@ -239,6 +422,13 @@ $(function() {
       "type": "3",
       "src": "another-serina.png",
       "name": "新谷 芹菜 / 燐光",
+      "name": "新谷 芹菜",
+      "equip1": "1/1",
+      "equip2": "3",
+      "equip3": "5/25",
+      "equip4": "2",
+      "sp": "135",
+      "attr": "2",
       "category": "10"
     },
     {
@@ -246,6 +436,12 @@ $(function() {
       "type": "3",
       "src": "normal-anna.png",
       "name": "宇佐元 杏奈",
+      "equip1": "1",
+      "equip2": "4/415",
+      "equip3": "5",
+      "equip4": "2",
+      "sp": "2",
+      "attr": "1",
       "category": ""
     },
     {
@@ -253,6 +449,12 @@ $(function() {
       "type": "1",
       "src": "another-anna.png",
       "name": "宇佐元 杏奈 / 希求",
+      "equip1": "1",
+      "equip2": "4/415",
+      "equip3": "5",
+      "equip4": "2",
+      "sp": "35",
+      "attr": "1",
       "category": "10"
     },
     {
@@ -260,6 +462,12 @@ $(function() {
       "type": "3",
       "src": "normal-meika.png",
       "name": "萬場 盟華",
+      "equip1": "2/2",
+      "equip2": "4",
+      "equip3": "2",
+      "equip4": "5",
+      "sp": "1",
+      "attr": "3",
       "category": ""
     },
     {
@@ -267,6 +475,12 @@ $(function() {
       "type": "1",
       "src": "another-meika.png",
       "name": "萬場 盟華 / 極彩",
+      "equip1": "2/2",
+      "equip2": "4",
+      "equip3": "2",
+      "equip4": "5",
+      "sp": "25",
+      "attr": "3",
       "category": "10"
     },
     {
@@ -274,6 +488,12 @@ $(function() {
       "type": "3",
       "src": "normal-asuka.png",
       "name": "文島 明日翔",
+      "equip1": "1",
+      "equip2": "3",
+      "equip3": "5",
+      "equip4": "2",
+      "sp": "5",
+      "attr": "3",
       "category": ""
     },
     {
@@ -281,6 +501,12 @@ $(function() {
       "type": "5",
       "src": "another-asuka.png",
       "name": "文島 明日翔 / 福音",
+      "equip1": "1",
+      "equip2": "3",
+      "equip3": "5",
+      "equip4": "2",
+      "sp": "25",
+      "attr": "3",
       "category": "10"
     },
     {
@@ -288,6 +514,12 @@ $(function() {
       "type": "4",
       "src": "normal-mari.png",
       "name": "神宮寺 真理",
+      "equip1": "2",
+      "equip2": "3",
+      "equip3": "5",
+      "equip4": "2",
+      "sp": "2",
+      "attr": "1",
       "category": ""
     },
     {
@@ -295,6 +527,12 @@ $(function() {
       "type": "2",
       "src": "another-mari.png",
       "name": "神宮寺 真理 / 孤影",
+      "equip1": "2",
+      "equip2": "3",
+      "equip3": "5",
+      "equip4": "2",
+      "sp": "25",
+      "attr": "1",
       "category": "10"
     },
     {
@@ -302,6 +540,12 @@ $(function() {
       "type": "4",
       "src": "normal-raiya.png",
       "name": "蛙坂 来弥",
+      "equip1": "2/1",
+      "equip2": "3",
+      "equip3": "1",
+      "equip4": "2",
+      "sp": "3",
+      "attr": "3",
       "category": ""
     },
     {
@@ -309,6 +553,12 @@ $(function() {
       "type": "1",
       "src": "another-raiya.png",
       "name": "蛙坂 来弥 / 残火",
+      "equip1": "2/1",
+      "equip2": "3",
+      "equip3": "1",
+      "equip4": "2",
+      "sp": "1",
+      "attr": "3",
       "category": "10"
     },
     {
@@ -316,13 +566,25 @@ $(function() {
       "type": "1",
       "src": "normal-yayoi.png",
       "name": "藤野 やよい",
+      "equip1": "1/2",
+      "equip2": "3",
+      "equip3": "5",
+      "equip4": "25",
+      "sp": "3",
+      "attr": "3",
       "category": ""
     },
     {
       "id": "21",
       "type": "4",
       "src": "another-yayoi.png",
-      "name": "藤野 やよい /",
+      "name": "藤野 やよい / 無常",
+      "equip1": "1/2",
+      "equip2": "3",
+      "equip3": "5",
+      "equip4": "25",
+      "sp": "25",
+      "attr": "3",
       "category": "10"
     },
     {
@@ -330,6 +592,12 @@ $(function() {
       "type": "1",
       "src": "normal-toka.png",
       "name": "下落合 桃歌",
+      "equip1": "2",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "2",
+      "sp": "2",
+      "attr": "1",
       "category": ""
     },
     {
@@ -337,6 +605,12 @@ $(function() {
       "type": "4",
       "src": "another-toka.png",
       "name": "下落合 桃歌 / 明星",
+      "equip1": "2",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "2",
+      "sp": "25",
+      "attr": "1",
       "category": "10"
     },
     {
@@ -344,6 +618,12 @@ $(function() {
       "type": "4",
       "src": "normal-hongfa.png",
       "name": "王 紅花",
+      "equip1": "1",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "2",
+      "sp": "2",
+      "attr": "3",
       "category": ""
     },
     {
@@ -351,6 +631,12 @@ $(function() {
       "type": "2",
       "src": "another-hongfa.png",
       "name": "王 紅花 / 紅蓮",
+      "equip1": "1",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "2",
+      "sp": "25",
+      "attr": "3",
       "category": "10"
     },
     {
@@ -358,6 +644,12 @@ $(function() {
       "type": "3",
       "src": "normal-kanade.png",
       "name": "仁紀藤 奏",
+      "equip1": "2",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "5",
+      "sp": "4",
+      "attr": "2",
       "category": ""
     },
     {
@@ -365,6 +657,12 @@ $(function() {
       "type": "5",
       "src": "normal-shiina.png",
       "name": "州天頃 椎奈",
+      "equip1": "1",
+      "equip2": "4",
+      "equip3": "3",
+      "equip4": "2",
+      "sp": "4",
+      "attr": "1",
       "category": ""
     },
     {
@@ -372,6 +670,12 @@ $(function() {
       "type": "1",
       "src": "normal-chieri.png",
       "name": "紺堂 地衛理",
+      "equip1": "2",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "5",
+      "sp": "2",
+      "attr": "4",
       "category": ""
     },
     {
@@ -379,6 +683,12 @@ $(function() {
       "type": "3",
       "src": "normal-shanti.png",
       "name": "サンティ・ラナ",
+      "equip1": "2",
+      "equip2": "3/3",
+      "equip3": "25",
+      "equip4": "15",
+      "sp": "3",
+      "attr": "1",
       "category": ""
     },
     {
@@ -386,6 +696,12 @@ $(function() {
       "type": "1",
       "src": "another-shanti.png",
       "name": "サンティ・ラナ / 雄渾",
+      "equip1": "2",
+      "equip2": "3/35",
+      "equip3": "25",
+      "equip4": "15",
+      "sp": "25",
+      "attr": "1",
       "category": "10"
     },
     {
@@ -393,6 +709,12 @@ $(function() {
       "type": "3",
       "src": "normal-kaoruko.png",
       "name": "山野 薫子",
+      "equip1": "2",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "1",
+      "sp": "5",
+      "attr": "2",
       "category": ""
     },
     {
@@ -400,6 +722,12 @@ $(function() {
       "type": "3",
       "src": "normal-nina.png",
       "name": "ニーナ・カリーニナ",
+      "equip1": "2",
+      "equip2": "4",
+      "equip3": "2",
+      "equip4": "4",
+      "sp": "2",
+      "attr": "4",
       "category": ""
     },
     {
@@ -407,6 +735,12 @@ $(function() {
       "type": "1",
       "src": "normal-misaki.png",
       "name": "籠目 深沙希",
+      "equip1": "2",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "2",
+      "sp": "2",
+      "attr": "2",
       "category": ""
     },
     {
@@ -414,6 +748,12 @@ $(function() {
       "type": "5",
       "src": "normal-rita.png",
       "name": "リタ・ヘンシェル",
+      "equip1": "1",
+      "equip2": "4",
+      "equip3": "1",
+      "equip4": "1",
+      "sp": "1",
+      "attr": "1",
       "category": ""
     },
     {
@@ -421,6 +761,12 @@ $(function() {
       "type": "1",
       "src": "normal-sugumi.png",
       "name": "金潟 すぐみ",
+      "equip1": "2",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "2",
+      "sp": "3",
+      "attr": "1",
       "category": ""
     },
     {
@@ -428,6 +774,12 @@ $(function() {
       "type": "5",
       "src": "normal-yasuri.png",
       "name": "新居目 安里",
+      "equip1": "1",
+      "equip2": "3",
+      "equip3": "5",
+      "equip4": "2",
+      "sp": "1",
+      "attr": "2",
       "category": ""
     },
     {
@@ -435,6 +787,12 @@ $(function() {
       "type": "2",
       "src": "normal-azuki.png",
       "name": "御蔵座 梓希",
+      "equip1": "2",
+      "equip2": "4",
+      "equip3": "25",
+      "equip4": "25",
+      "sp": "2",
+      "attr": "4",
       "category": ""
     },
     {
@@ -442,6 +800,12 @@ $(function() {
       "type": "4",
       "src": "normal-shirley.png",
       "name": "シャーリー・オークレイ",
+      "equip1": "1",
+      "equip2": "4",
+      "equip3": "2",
+      "equip4": "1",
+      "sp": "4",
+      "attr": "1",
       "category": ""
     },
     {
@@ -449,6 +813,12 @@ $(function() {
       "type": "2",
       "src": "normal-mirie.png",
       "name": "御茶ノ水 美里江",
+      "equip1": "1",
+      "equip2": "4",
+      "equip3": "2",
+      "equip4": "2",
+      "sp": "2",
+      "attr": "1",
       "category": ""
     },
     {
@@ -456,6 +826,12 @@ $(function() {
       "type": "1",
       "src": "normal-akane.png",
       "name": "琴村 朱音",
+      "equip1": "2",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "2",
+      "sp": "2",
+      "attr": "3",
       "category": ""
     },
     {
@@ -463,6 +839,12 @@ $(function() {
       "type": "1",
       "src": "normal-amane.png",
       "name": "琴村 天音",
+      "equip1": "2",
+      "equip2": "4",
+      "equip3": "5",
+      "equip4": "3",
+      "sp": "3",
+      "attr": "4",
       "category": ""
     },
     {
@@ -470,6 +852,12 @@ $(function() {
       "type": "4",
       "src": "normal-tsukasa.png",
       "name": "二階堂 司",
+      "equip1": "2",
+      "equip2": "3",
+      "equip3": "1",
+      "equip4": "2",
+      "sp": "?",
+      "attr": "4",
       "category": ""
     },
     {
@@ -477,6 +865,12 @@ $(function() {
       "type": "4",
       "src": "normal-itsuri.png",
       "name": "須賀 乙莉",
+      "equip1": "2",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "2",
+      "sp": "2",
+      "attr": "2",
       "category": ""
     },
     {
@@ -484,6 +878,12 @@ $(function() {
       "type": "4",
       "src": "normal-chie.png",
       "name": "東雲 チヱ",
+      "equip1": "1",
+      "equip2": "4",
+      "equip3": "1",
+      "equip4": "2",
+      "sp": "3",
+      "attr": "3",
       "category": ""
     },
     {
@@ -491,6 +891,12 @@ $(function() {
       "type": "2",
       "src": "normal-fatima.png",
       "name": "ファティマ・ベトロラム",
+      "equip1": "2",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "2",
+      "sp": "?",
+      "attr": "3",
       "category": ""
     },
     {
@@ -498,6 +904,12 @@ $(function() {
       "type": "2",
       "src": "normal-mira.png",
       "name": "村尾 未羅",
+      "equip1": "1",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "2",
+      "sp": "?",
+      "attr": "2",
       "category": ""
     },
     {
@@ -505,6 +917,12 @@ $(function() {
       "type": "3",
       "src": "normal-yui.png",
       "name": "君影 唯",
+      "equip1": "2",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "2",
+      "sp": "2",
+      "attr": "1",
       "category": ""
     },
     {
@@ -512,6 +930,12 @@ $(function() {
       "type": "2",
       "src": "normal-miyuki.png",
       "name": "千島 美幸",
+      "equip1": "2",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "2",
+      "sp": "3",
+      "attr": "1",
       "category": ""
     },
     {
@@ -519,6 +943,12 @@ $(function() {
       "type": "5",
       "src": "normal-yuto.png",
       "name": "九炉鉄 悠都",
+      "equip1": "2",
+      "equip2": "3",
+      "equip3": "3",
+      "equip4": "3",
+      "sp": "4",
+      "attr": "3",
       "category": ""
     },
     {
@@ -526,6 +956,12 @@ $(function() {
       "type": "4",
       "src": "normal-gourai.png",
       "name": "轟雷",
+      "equip1": "1",
+      "equip2": "3",
+      "equip3": "1",
+      "equip4": "5",
+      "sp": "2",
+      "attr": "3",
       "category": "99"
     },
     {
@@ -533,6 +969,12 @@ $(function() {
       "type": "4",
       "src": "normal-stylet.png",
       "name": "スティレット",
+      "equip1": "1/2",
+      "equip2": "3",
+      "equip3": "1",
+      "equip4": "5",
+      "sp": "3",
+      "attr": "4",
       "category": "99"
     },
     {
@@ -540,6 +982,12 @@ $(function() {
       "type": "3",
       "src": "normal-baselard.png",
       "name": "バーゼラルド",
+      "equip1": "2",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "5",
+      "sp": "2",
+      "attr": "1",
       "category": "99"
     },
     {
@@ -547,6 +995,12 @@ $(function() {
       "type": "3",
       "src": "normal-hresvelgr.png",
       "name": "フレズヴェルク",
+      "equip1": "2",
+      "equip2": "32",
+      "equip3": "3",
+      "equip4": "2",
+      "sp": "3",
+      "attr": "2",
       "category": "99"
     },
     {
@@ -554,6 +1008,12 @@ $(function() {
       "type": "5",
       "src": "normal-raptor.png",
       "name": "SOLラプター",
+      "equip1": "2",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "2",
+      "sp": "2",
+      "attr": "3",
       "category": "99"
     },
     {
@@ -561,6 +1021,12 @@ $(function() {
       "type": "3",
       "src": "normal-raptor-strike.png",
       "name": "SOLラプター[ストライク]",
+      "equip1": "2",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "5",
+      "sp": "3",
+      "attr": "4",
       "category": "99"
     },
     {
@@ -568,6 +1034,12 @@ $(function() {
       "type": "3",
       "src": "normal-yoshika.png",
       "name": "宮藤 芳佳",
+      "equip1": "1",
+      "equip2": "4",
+      "equip3": "5",
+      "equip4": "1",
+      "sp": "5",
+      "attr": "1",
       "category": "99"
     },
     {
@@ -575,6 +1047,12 @@ $(function() {
       "type": "3",
       "src": "normal-linette.png",
       "name": "リネット・ビショップ",
+      "equip1": "1",
+      "equip2": "4",
+      "equip3": "1",
+      "equip4": "1",
+      "sp": "1",
+      "attr": "2",
       "category": "99"
     },
     {
@@ -582,6 +1060,12 @@ $(function() {
       "type": "5",
       "src": "normal-barkhorn.png",
       "name": "ゲルトルート・バルクホルン",
+      "equip1": "1",
+      "equip2": "4",
+      "equip3": "5",
+      "equip4": "1",
+      "sp": "?",
+      "attr": "3",
       "category": "99"
     },
     {
@@ -589,6 +1073,12 @@ $(function() {
       "type": "3",
       "src": "normal-hartmann.png",
       "name": "エーリカ・ハルトマン",
+      "equip1": "1",
+      "equip2": "4",
+      "equip3": "3",
+      "equip4": "1",
+      "sp": "3",
+      "attr": "4",
       "category": "99"
     },
     {
@@ -596,6 +1086,12 @@ $(function() {
       "type": "4",
       "src": "normal-miki.png",
       "name": "星月 みき",
+      "equip1": "2",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "3",
+      "sp": "3",
+      "attr": "3",
       "category": "99"
     },
     {
@@ -603,6 +1099,12 @@ $(function() {
       "type": "5",
       "src": "normal-kurumi.png",
       "name": "常磐 くるみ",
+      "equip1": "2",
+      "equip2": "4",
+      "equip3": "4",
+      "equip4": "5",
+      "sp": "4",
+      "attr": "4",
       "category": "99"
     },
     {
@@ -610,6 +1112,12 @@ $(function() {
       "type": "2",
       "src": "normal-michelle.png",
       "name": "綿木 ミシェル",
+      "equip1": "2",
+      "equip2": "4",
+      "equip3": "2",
+      "equip4": "2",
+      "sp": "2",
+      "attr": "1",
       "category": "99"
     },
     {
@@ -617,6 +1125,12 @@ $(function() {
       "type": "3",
       "src": "normal-sadone.png",
       "name": "サドネ",
+      "equip1": "2",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "3",
+      "sp": "3",
+      "attr": "2",
       "category": "99"
     },
     {
@@ -624,6 +1138,12 @@ $(function() {
       "type": "4",
       "src": "normal-marie.png",
       "name": "マリー・ローズ",
+      "equip1": "2",
+      "equip2": "4",
+      "equip3": "2",
+      "equip4": "1",
+      "sp": "4",
+      "attr": "2",
       "category": "99"
     },
     {
@@ -631,6 +1151,12 @@ $(function() {
       "type": "5",
       "src": "normal-kasumi.png",
       "name": "かすみ",
+      "equip1": "2",
+      "equip2": "4",
+      "equip3": "3",
+      "equip4": "2",
+      "sp": "4",
+      "attr": "4",
       "category": "99"
     },
 
@@ -638,9 +1164,37 @@ $(function() {
 /* ↑↑↑↑ここまでキャラクターデータ↑↑↑↑ */
 /* 以下は基本編集しなくても大丈夫です */
 
+/* IDソート */
   data.sort(function(a,b){
     return (Number(a.id) < Number(b.id) ? -1 : 1);
   });
+/* 複合ソート */
+/*
+  data.sort(function(a,b){
+    if(a.attr < b.attr) return -1;
+    if(a.attr > b.attr) return 1;
+    if(Number(a.id) < Number(b.id)) return -1;
+    if(Number(a.id) > Number(b.id)) return 1;
+    return 0;
+  });
+*/
+
+  var mode = getParam('m');
+
+  if(mode == 'gear'){
+    $('body').attr('id', 'equip');
+    $('h1').text($('h1').text()+'(ギア/SP属性)');
+  }
+
+  function getParam(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+  }
 
   function AliceList(target_id,target_data,target_type,target_category) {
     var
@@ -655,20 +1209,80 @@ $(function() {
         var classname="";
         if(data_category == 99){ classname="collabo"; collaboCheck++; collabostr='【コラボキャラ】 '; }
         if(collaboCheck == 1){/* 恒常とコラボの隙間を作成 */
-          var youso = ulObj.children('img').length;
+          var youso = ulObj.children('span').length;
           if( (youso % 2) != 0 ){
-            ulObj.append('<img src="./img/space.png" class="nosp" />');
-            ulObj.append('<img src="./img/space.png" class="nosp" />');
-            ulObj.append('<img src="./img/space.png" class="nosp" />');
+            ulObj.append('<span class="nosp nosp1"><img src="./img/space.png" /></span>');
+            ulObj.append('<span class="nosp nosp2"><img src="./img/space.png" /></span>');
+            ulObj.append('<span class="nosp nosp3"><img src="./img/space.png" /></span>');
           }
           if( (youso % 2) == 0 ){
-            ulObj.append('<img src="./img/space.png" class="nosp" />');
-            ulObj.append('<img src="./img/space.png" class="nosp" />');
+            ulObj.append('<span class="nosp nosp1"><img src="./img/space.png" /></span>');
+            ulObj.append('<span class="nosp nosp2"><img src="./img/space.png" /></span>');
           }
         }
-        ulObj.append($("<img>").attr({"src":'./img/'+target_data[i].src,"title":target_data[i].id+'. '+collabostr+target_data[i].name,"class":classname}));/* imgタグ生成 */
+        ulObj.append($("<span>").attr({"class":"chara"+i}));/* spanタグ生成 */
+        ulObj.children(".chara"+i).append($("<img>").attr({"src":'./img/'+target_data[i].src,"title":target_data[i].id+'. '+collabostr+target_data[i].name,"class":classname}));/* キャラimgタグ生成 */
+
+        if(mode == 'gear'){
+          EquipList(target_id,i,'icon-1.png',target_data[i].equip1);
+          EquipList(target_id,i,'icon-2.png',target_data[i].equip2);
+          EquipList(target_id,i,'icon-3.png',target_data[i].equip3);
+          EquipList(target_id,i,'icon-4.png',target_data[i].equip4);
+          EquipList(target_id,i,'icon-5.png',target_data[i].sp);
+        }
+
       }
     }
+  }
+
+  function EquipList(target_id,i,target_img,target_data) {
+      var ulObj = $(target_id);
+
+        ulObj.children(".chara"+i).append($("<img>").attr({"src":'./img/icon/'+target_img,"title":'',"class":'icons icon1'}));/* imgタグ生成 */
+
+        if( typeof target_data === 'undefined' || target_data === '' ){
+          ulObj.children(".chara"+i).append($("<img>").attr({"src":'./img/icon/space.png',"title":'',"class":'icons equip1 br'}));
+        }else{
+          Array=(target_data).split('');
+          Array.forEach(function(val, idx, ary){
+            var str1='';
+            var str2='';
+            switch (val){
+              case '1':
+                str1="ammo-1.png";
+                break;
+              case '2':
+                str1="ammo-2.png";
+                break;
+              case '4':
+                str1="melee-1.png";
+                break;
+              case '3':
+                str1="melee-2.png";
+                break;
+              case '5':
+                str1="skill-1.png";
+                break;
+              case '/':
+                str1="or.png";
+                break;
+              case '?':
+                str1="hatena.png";
+                break;
+              case '':
+                str1="space.png";
+                break;
+            }
+            if(idx === ary.length - 1){
+              str2=" br";
+            }
+            if( str2 == 'or' ){
+              ulObj.children(".chara"+i).children('img').last().attr("class","icons or");
+            }else if( str1 != '' ){
+              ulObj.children(".chara"+i).append($("<img>").attr({"src":'./img/icon/'+str1,"title":'',"class":'icons equip1'+str2}));
+            }
+          });
+        }
   }
 
   AliceList("#tokusei1",data,"1","");/* 放出特化 */
@@ -691,9 +1305,25 @@ $(function() {
   </script>
 
   <style>
+/* 基本スタイル */
 body {
   background:#C9E8FC;
   padding:10px 10px;
+}
+* {
+  box-sizing:border-box;
+}
+a ,
+a:focus ,
+a:active ,
+a:hover ,
+a:visited {
+  color:#336699;
+}
+a:focus ,
+a:active ,
+a:hover  {
+  color:#cc0000;
 }
 h1 {
   background:#DC5E9D;
@@ -746,6 +1376,7 @@ div#hosoku3 img {
   width:100%;
 }
 
+/* 通常のスタイル */
 ul#normal ,
 ul#another ,
 ul#another2 {
@@ -792,31 +1423,43 @@ ul#another li:nth-child(5) ,
 ul#another2 li:nth-child(5) {
   border-right:2px solid transparent;
 }
-ul#normal li img ,
-ul#another li img ,
-ul#another2 li img {
+ul#normal li span ,
+ul#another li span ,
+ul#another2 li span {
   width:40%;
   float:left;
+  display:inline-block;
+}
+ul#normal li span img ,
+ul#another li span img ,
+ul#another2 li span img {
+  width:100%;
   box-sizing:border-box;
   border:1px solid #999;
 }
-ul#normal li img.nosp ,
-ul#another li img.nosp ,
-ul#another2 li img.nosp {
+ul#normal li span.nosp img ,
+ul#another li span.nosp img ,
+ul#another2 li span.nosp img {
   border:1px solid transparent;
 }
-ul#normal li img:nth-child(even) ,
-ul#another li img:nth-child(even) {
+ul#normal li span img.icons ,
+ul#another li span img.icons ,
+ul#another2 li span img.icons {
+  display:none;
+}
+
+ul#normal li span:nth-child(even) ,
+ul#another li span:nth-child(even) {
   margin:5% 5% 0 7%;
 }
-ul#normal li img:nth-child(odd) ,
-ul#another li img:nth-child(odd) {
+ul#normal li span:nth-child(odd) ,
+ul#another li span:nth-child(odd) {
   margin:5% 5% 0 0;
 }
-ul#normal li img:nth-of-type(1) {
+ul#normal li span:nth-of-type(1) {
   margin-top:0;
 }
-ul#normal li img:nth-of-type(2) {
+ul#normal li span:nth-of-type(2) {
   margin-top:0;
 }
 ul#normal li#tokusei1 h2 ,
@@ -855,16 +1498,118 @@ archive#version {
   color:#666;
   text-align:right;
   font-size:1vw;
+  display:inline-block;
+  width:49%;
+}
+archive#menu {
+  display:block;
+  color:#666;
+  font-size:1.5vw;
+  color:#336699;
+  display:inline-block;
+  width:50%;
+}
+div#hosoku4 {
+  display:none;
+}
+body#equip div#hosoku4 {
+  display:block;
+  padding:0px 0 10px;
+  font-size:1.3vw;
+  text-align:center;
+}
+div#hosoku4 img {
+  vertical-align:middle;
+  margin-left:2%;
+  margin-right:5px;
+  width:2%;
+}
+div#hosoku4 span {
+  vertical-align:middle;
+}
+/* ギア・SP属性表示のスタイル */
+body#equip ul#normal li span ,
+body#equip ul#another li span ,
+body#equip ul#another2 li span {
+  width:100%;
+  display:inline-block;
+  margin:5% 0 0;
+  padding:0;
+  padding:0 5%;
+  text-align:left;
+}
+body#equip ul#normal li span img ,
+body#equip ul#another li span img ,
+body#equip ul#another2 li span img {
+  width:50%;
+  width:45%;
+  box-sizing:border-box;
+  border:1px solid #999;
+  float:left;
+  display:block;
+}
+body#equip ul#normal li span img.icons ,
+body#equip ul#another li span img.icons ,
+body#equip ul#another2 li span img.icons {
+  width:10%;
+  width:9%;
+  border:0;
+}
+body#equip ul#normal li span img.br ,
+body#equip ul#another li span img.br ,
+body#equip ul#another2 li span img.br {
+  float:none;
+}
+body#equip ul#normal li span img.or ,
+body#equip ul#another li span img.or ,
+body#equip ul#another2 li span img.or {
+  box-sizing:content-box;
+  border-right:2px solid red;
+}
+body#equip ul#normal li span img.br::after ,
+body#equip ul#another li span img.br::after ,
+body#equip ul#another2 li span img.br::after {
+  content: "\A";
+  white-space: pre;
+}
+body#equip ul#normal li span.nosp img ,
+body#equip ul#another li span.nosp img ,
+body#equip ul#another2 li span.nosp img {
+  border:0;
+}
+body#equip ul#normal li span.nosp2 ,
+body#equip ul#another li span.nosp2 ,
+body#equip ul#another2 li span.nosp2 ,
+body#equip ul#normal li span.nosp3 ,
+body#equip ul#another li span.nosp3 ,
+body#equip ul#another2 li span.nosp3 {
+  display:none;
 }
   </style>
 </head>
 
 <body>
 
+<archive id="menu">| <a href="alice.html">通常版</a> | <a href="alice.html?m=gear">ギア/SP属性版</a> |</archive>
 <archive id="version"></archive>
 
 <archive id="header">
-  <h1>属性出力キャラクター対応表</h1>
+  <h1>属性出力キャラ対応表</h1>
+  <div id="hosoku4">
+    <img src="./img/icon/icon-1.png" /><span>=ショット</span>
+    <img src="./img/icon/icon-2.png" /><span>=クロス</span>
+    <img src="./img/icon/icon-3.png" /><span>=トップス</span>
+    <img src="./img/icon/icon-4.png" /><span>=ボトムス</span>
+    <img src="./img/icon/icon-5.png" /><span>=SPスキル</span>
+    <img src="./img/icon/or.png" /><span>=派生</span>
+    <br />
+    <img src="./img/icon/ammo-1.png" /><span>=実弾</span>
+    <img src="./img/icon/ammo-2.png" /><span>=エネルギー弾</span>
+    <img src="./img/icon/melee-2.png" /><span>=斬撃</span>
+    <img src="./img/icon/melee-1.png" /><span>=打撃</span>
+    <img src="./img/icon/skill-1.png" /><span>=補助・回復等</span>
+    <img src="./img/icon/hatena.png" /><span>=不明</span>
+  </div>
 
   <ul id="hosoku">
     <li id="hosoku1">左に行くほど弱点を突いた時のダメージが大きく、受けるダメージも多い</li>
