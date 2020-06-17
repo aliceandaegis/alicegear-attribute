@@ -1,0 +1,51 @@
+# アリス・ギア・アイギス 属性一覧表
+
+アリス・ギア・アイギスのキャラ特性、攻撃属性を一覧表として出力します。
+
+## 使い方
+
+alice.htmlをChromeやFirefox等のWebブラウザで表示してください。
+
+キャラリストはjavascriptで出力させています。
+
+画像として配布する場合は、任意のサイズにしてページ全体をスクリーンショット等で画像化してご利用ください。
+
+- firefoxなら「スクリーンショットを撮る」から画像の保存を行ってください。
+- chromeなら[Fireshot](https://chrome.google.com/webstore/detail/take-webpage-screenshots/mcbpblocgmgfnpjjppndjkmgjaogfceg?hl=ja)等の拡張機能を導入してください。
+
+## 出力サンプル
+- sample101.jpgは通常版のイメージ画像
+- sample110.jpgはギア/SP属性版のイメージ画像
+
+## 編集方法
+
+### キャラクター追加
+
+`img`フォルダにキャラクターアイコン画像を追加してください。
+
+仕様: 111x111px, jpeg形式
+
+### スタイルの変更
+
+`img`フォルダ内のスタイルシートを変更してください。
+
+### 動作の変更
+
+`js`フォルダ内のjavascriptファイルを修正してください
+
+## License
+
+本ツールの改変、再配布は自由です。
+
+「アリス・ギア・アイギス」は「株式会社ピラミッド」が運営するゲームです。
+
+使用している画像データ等の著作権は、権利者様側へ帰属しております。
+
+## Link
+
+  [アリス・ギア・アイギス公式サイト](https://colopl.co.jp/alicegearaegis/)
+
+  Twitter: [@aliceandaegis](https://twitter.com/aliceandaegis)
+
+  [動作サンプル](http://aliceinfo.starfree.jp/alice.html) (暫定でフリーサーバレンタルのためいずれ消失します)
+  
