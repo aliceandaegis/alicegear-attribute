@@ -47,13 +47,13 @@ $(function() {
         if(collaboCheck == 1){/* 恒常とコラボの隙間を作成 */
           var youso = ulObj.children('span').length;
           if( (youso % 2) != 0 ){
-            ulObj.append('<span class="nosp nosp1"><img src="./img/space.png" /></span>');
-            ulObj.append('<span class="nosp nosp2"><img src="./img/space.png" /></span>');
-            ulObj.append('<span class="nosp nosp3"><img src="./img/space.png" /></span>');
+            ulObj.append('<span class="nosp nosp1"><img src="./img/space.png"></span>');
+            ulObj.append('<span class="nosp nosp2"><img src="./img/space.png"></span>');
+            ulObj.append('<span class="nosp nosp3"><img src="./img/space.png"></span>');
           }
           if( (youso % 2) == 0 ){
-            ulObj.append('<span class="nosp nosp1"><img src="./img/space.png" /></span>');
-            ulObj.append('<span class="nosp nosp2"><img src="./img/space.png" /></span>');
+            ulObj.append('<span class="nosp nosp1"><img src="./img/space.png"></span>');
+            ulObj.append('<span class="nosp nosp2"><img src="./img/space.png"></span>');
           }
         }
         ulObj.append($("<span>").attr({"class":"chara"+i}));/* spanタグ生成 */
