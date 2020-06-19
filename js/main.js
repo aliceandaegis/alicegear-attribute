@@ -23,12 +23,12 @@ $(function() {
   }
 
   function getParam(name, url) {
-    if (!url) url = window.location.href;
+    if(!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, "\\$&");
     var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
         results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
+    if(!results) return null;
+    if(!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
   }
 
@@ -42,8 +42,7 @@ $(function() {
       var data_category=target_data[i].category;
       if(target_type == data_type && target_category == data_category){/* 任意のデータだけ出力 */
         var collabostr="";
-        var classname="";
-        if(data_category == 99){ classname="collabo"; collaboCheck++; collabostr='【コラボキャラ】 '; }
+        if(data_category == 99){ collaboCheck++; collabostr='【コラボキャラ】 '; }
         if(collaboCheck == 1){/* 恒常とコラボの隙間を作成 */
           var youso = ulObj.children('span').length;
           if( (youso % 2) != 0 ){
@@ -56,8 +55,12 @@ $(function() {
             ulObj.append('<span class="nosp nosp2"><img src="./img/space.png"></span>');
           }
         }
+        var link='';
+        if( typeof target_data[i].link !== 'undefined' && target_data[i].link ){
+          link = target_data[i].link;
+        }
         ulObj.append($("<span>").attr({"class":"chara"+i}));/* spanタグ生成 */
-        ulObj.children(".chara"+i).append($("<img>").attr({"src":'./img/'+target_data[i].src,"title":target_data[i].id+'. '+collabostr+target_data[i].name,"class":classname}));/* キャラimgタグ生成 */
+        ulObj.children(".chara"+i).append($("<img>").attr({"src":'./img/'+target_data[i].src,"title":target_data[i].id+'. '+collabostr+target_data[i].name,"class":"charaimg","link":link}));/* キャラimgタグ生成 */
 
         if(mode == 'gear'){
           EquipList(target_id,i,'icon-1.png',target_data[i].equip1);
@@ -79,7 +82,7 @@ $(function() {
         if( typeof target_data === 'undefined' || target_data === '' ){
           ulObj.children(".chara"+i).append($("<img>").attr({"src":'./img/icon/space.png',"title":'',"class":'icons equip1 br'}));
         }else{
-          Array=(target_data).split('');
+          var Array=(target_data).split('');
           Array.forEach(function(val, idx, ary){
             var str1='';
             var str2='';
@@ -120,6 +123,12 @@ $(function() {
           });
         }
   }
+
+  $(document).on("click", "img.charaimg", function(){
+    if( $(this).attr("link") ){
+      open( $(this).attr("link"), "_blank" );
+    }
+  });
 
   AliceList("#tokusei1",data,"1","");/* 放出特化 */
   AliceList("#tokusei2",data,"2","");/* 特質放出 */

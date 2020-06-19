@@ -158,6 +158,11 @@ ul#another2 li span img {
   box-sizing:border-box;
   border:1px solid #999;
 }
+ul#normal li span img.charaimg[link^="http"] ,
+ul#another li span img.charaimg[link^="http"] ,
+ul#another2 li span img.charaimg[link^="http"] {
+  cursor:pointer;
+}
 ul#normal li span.nosp img ,
 ul#another li span.nosp img ,
 ul#another2 li span.nosp img {
