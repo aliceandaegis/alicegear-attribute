@@ -17,7 +17,7 @@ $(function() {
 
   var mode = getParam('m');
 
-  if(mode == 'gear'){
+  if(mode == 'equip'){/* 過去の名残り ?m=gear でアクセスすると動作 */
     $('body').attr('id', 'equip');
     $('h1').text($('h1').text()+'(ギア/SP属性)');
   }
@@ -62,13 +62,13 @@ $(function() {
         ulObj.append($("<span>").attr({"class":"chara"+i}));/* spanタグ生成 */
         ulObj.children(".chara"+i).append($("<img>").attr({"src":'./img/'+target_data[i].src,"title":target_data[i].id+'. '+collabostr+target_data[i].name,"class":"charaimg","link":link}));/* キャラimgタグ生成 */
 
-        if(mode == 'gear'){
+//        if(mode == 'gear'){
           EquipList(target_id,i,'icon-1.png',target_data[i].equip1);
           EquipList(target_id,i,'icon-2.png',target_data[i].equip2);
           EquipList(target_id,i,'icon-3.png',target_data[i].equip3);
           EquipList(target_id,i,'icon-4.png',target_data[i].equip4);
           EquipList(target_id,i,'icon-5.png',target_data[i].sp);
-        }
+//        }
 
       }
     }
@@ -128,6 +128,14 @@ $(function() {
     if( $(this).attr("link") ){
       open( $(this).attr("link"), "_blank" );
     }
+  });
+
+  $(document).on("click", "#menu a", function(){
+    if( $(this).attr("class") ){
+      $("body").attr({"id":$(this).attr("class")});
+      $("h1").text($(this).attr("text"));
+    }
+    return false;
   });
 
   AliceList("#tokusei1",data,"1","");/* 放出特化 */

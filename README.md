@@ -5,6 +5,7 @@
 ## 使い方
 
 alice.htmlをChromeやFirefox等のWebブラウザで表示してください。
+index.htmlは削除しても構いません。
 
 キャラリストはjavascriptで出力させています。
 
@@ -47,5 +48,7 @@ alice.htmlをChromeやFirefox等のWebブラウザで表示してください。
 
   Twitter: [@aliceandaegis](https://twitter.com/aliceandaegis)
 
-  [動作サンプル](http://aliceinfo.starfree.jp/alice.html) (暫定でフリーサーバレンタルのためいずれ消失します)
+  [動作サンプル(1)](https://aliceandaegis.netlify.app/alice.html)
+
+  [動作サンプル(2)](http://aliceinfo.starfree.jp/alice.html) (暫定でフリーサーバレンタルのためいずれ消失します)
   
