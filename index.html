@@ -50,11 +50,19 @@ body {
   display:inline-block;
   color:#000;
   font-size:2.5vw;
+  margin-top:1vh;
   padding:4px 7px 1px;
   background:#fff;
   text-decoration:none;
 }
+#indexmenu a:hover {
+  background:#336699;
+}
+#indexmenu a.twitter ,
 #indexmenu a.github {
+  background:transparent;
+}
+#indexmenu icons {
   position:absolute;
   top:5vh;
   left:5vw;
@@ -68,11 +76,32 @@ body {
   width:6vw;
   vertical-align:0.4vw;
 }
-@media screen and (max-width: 980px) {
+#indexmenu a.twitter img:nth-of-type(1) {
+  width:3vw;
+  margin-right:0.4vw;
+}
+@media screen and (max-width: 980px) {/* スマホ */
   #indexmenu {
     background:url("./img/index/topimage-2.jpg");
     background-size:cover;
     background-position: center;
+  }
+  #indexmenu span {
+    font-size:5.5vw;
+  }
+  #indexmenu a {
+    font-size:4.5vw;
+  }
+  #indexmenu a.github img:nth-of-type(1) {
+    width:5vw;
+    margin-right:0.7vw;
+  }
+  #indexmenu a.github img:nth-of-type(2) {
+    width:10vw;
+    vertical-align:0.6vw;
+  }
+  #indexmenu a.twitter img:nth-of-type(1) {
+    width:5vw;
   }
 }
   </style>
@@ -81,7 +110,7 @@ body {
 <body>
 
 <archive id="indexmenu">
-<span>Alice And Aiges<br><a href="alice.html">ENTER</a><a href="https://github.com/aliceandaegis/alicegear-attribute" target="_blank" class="github"><img src="./img/index/mark-github.svg"><img src="./img/index/logo-github.svg"></a></span>
+<span>Alice And Aegis<br><a href="alice.html">ENTER</a><icons><a href="https://github.com/aliceandaegis/alicegear-attribute" target="_blank" class="github"><img src="./img/index/mark-github.svg"><img src="./img/index/logo-github.svg"></a><br><a href="https://twitter.com/aliceandaegis" target="_blank" class="twitter"><img src="./img/index/icon-twitter.svg"></a></icons></span>
 </archive>
 
 </body>
