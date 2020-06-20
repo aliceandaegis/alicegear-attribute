@@ -54,6 +54,20 @@ body {
   background:#fff;
   text-decoration:none;
 }
+#indexmenu a.github {
+  position:absolute;
+  top:5vh;
+  left:5vw;
+  background:transparent;
+}
+#indexmenu a.github img:nth-of-type(1) {
+  width:3vw;
+  margin-right:0.4vw;
+}
+#indexmenu a.github img:nth-of-type(2) {
+  width:6vw;
+  vertical-align:0.4vw;
+}
 @media screen and (max-width: 980px) {
   #indexmenu {
     background:url("./img/index/topimage-2.jpg");
@@ -66,7 +80,9 @@ body {
 
 <body>
 
-<archive id="indexmenu"><span>Alice And Aiges<br><a href="alice.html">ENTER</a></span></archive>
+<archive id="indexmenu">
+<span>Alice And Aiges<br><a href="alice.html">ENTER</a><a href="https://github.com/aliceandaegis/alicegear-attribute" target="_blank" class="github"><img src="./img/index/mark-github.svg"><img src="./img/index/logo-github.svg"></a></span>
+</archive>
 
 </body>
 </html>
