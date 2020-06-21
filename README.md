@@ -4,7 +4,7 @@
 
 ## 使い方
 
-alice.htmlをChromeやFirefox等のWebブラウザで表示してください。
+alice.htmlをChromeやFirefox等のWebブラウザで表示してください。  
 index.htmlは削除しても構いません。
 
 キャラリストはjavascriptで出力させています。
@@ -28,7 +28,7 @@ index.htmlは削除しても構いません。
 
 ### スタイルの変更
 
-`img`フォルダ内のスタイルシートを変更してください。
+`css`フォルダ内のスタイルシートを変更してください。
 
 ### 動作の変更
 
@@ -48,7 +48,7 @@ index.htmlは削除しても構いません。
 
   Twitter: [@aliceandaegis](https://twitter.com/aliceandaegis)
 
-  [動作サンプル(1)](https://aliceandaegis.netlify.app/alice.html)
+  [動作サンプル(Netlify)](https://aliceandaegis.netlify.app/alice.html) (GitHubと連動中)
 
-  [動作サンプル(2)](http://aliceinfo.starfree.jp/alice.html) (暫定でフリーサーバレンタルのためいずれ消失します)
+  [動作サンプル(StarFree)](http://aliceinfo.starfree.jp/alice.html) (暫定でフリーサーバレンタルのためいずれ消失します)
   
