@@ -12,7 +12,7 @@
   <script>
 
 /* 更新情報 必要に応じて書き換えてください */
-  var version = "Ver 1.1.4 | UPDATE:2020/10/05";
+  var version = "Ver 1.1.4 | UPDATE:2020/10/22";
 
 /*
   jsonファイルを外部に設置すると単にHTMLファイルを開いたときに動作しなくなるので当面はHTMLファイル内に
@@ -32,6 +32,7 @@
   equip4   = ボトムススキル：1=実弾、2=エネルギー弾、3=斬撃、4=打撃、5=補助/回復
   sp       = ボトムススキル：1=実弾、2=エネルギー弾、3=斬撃、4=打撃、5=補助/回復
   ※情報不足でわからないところは ?=不明
+  ※派生は/記号の後に数字などを記述（/が派生アイコンになる）
   ※K.I.S.S.で追加される属性は K の文字追加した後に 1～5 を記述（暫定）
 
   attr     = 1=電撃属性、2=重力属性、3=焼夷属性、4=冷撃属性
@@ -700,7 +701,7 @@
       "src": "normal-kanade.png",
       "name": "仁紀藤 奏",
       "equip1": "2",
-      "equip2": "3",
+      "equip2": "3/3?",
       "equip3": "2",
       "equip4": "5",
       "sp": "4",
@@ -709,13 +710,27 @@
       "category": ""
     },
     {
+      "id": "24",
+      "type": "1",
+      "src": "another-kanade.png",
+      "name": "仁紀藤 奏 / 雲耀",
+      "equip1": "2",
+      "equip2": "3/3?",
+      "equip3": "2",
+      "equip4": "5",
+      "sp": "245?",
+      "attr": "2",
+      "link": "https://wikiwiki.jp/alicegear/%E4%BB%81%E7%B4%80%E8%97%A4%E5%A5%8F%E9%9B%B2%E8%80%80",
+      "category": "10"
+    },
+    {
       "id": "25",
       "type": "5",
       "src": "normal-shiina.png",
       "name": "州天頃 椎奈",
       "equip1": "1",
-      "equip2": "4",
-      "equip3": "3",
+      "equip2": "4/4?",
+      "equip3": "3/3?",
       "equip4": "25",
       "sp": "4",
       "attr": "1",
@@ -728,8 +743,8 @@
       "src": "another-shiina.png",
       "name": "州天頃 椎奈 / 玉響",
       "equip1": "1",
-      "equip2": "4",
-      "equip3": "3",
+      "equip2": "4/4?",
+      "equip3": "3/3?",
       "equip4": "25",
       "sp": "45?",
       "attr": "1",
@@ -741,7 +756,7 @@
       "type": "1",
       "src": "normal-chieri.png",
       "name": "紺堂 地衛理",
-      "equip1": "2",
+      "equip1": "2/2?",
       "equip2": "3",
       "equip3": "2",
       "equip4": "5",
@@ -755,7 +770,7 @@
       "type": "3",
       "src": "another-chieri.png",
       "name": "紺堂 地衛理 / 晨星",
-      "equip1": "2",
+      "equip1": "2/2?",
       "equip2": "3",
       "equip3": "2",
       "equip4": "5",
