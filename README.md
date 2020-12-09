@@ -50,5 +50,4 @@ index.htmlは削除しても構いません。
 
   [動作サンプル(Netlify)](https://aliceandaegis.netlify.app/alice.html) (GitHubと連動中)
 
-  ~~[動作サンプル(StarFree)](http://aliceinfo.starfree.jp/alice.html) (暫定でフリーサーバレンタルのためいずれ消失します)~~
   
