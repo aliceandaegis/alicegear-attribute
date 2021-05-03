@@ -99,6 +99,7 @@ archive#notes {
 
 /* 通常のスタイル */
 ul#normal ,
+ul#normal2 ,
 ul#another ,
 ul#another2 {
   display:table;
@@ -113,6 +114,7 @@ ul#another2 {
   background:#F9DEC9;
 }
 ul#normal:after ,
+ul#normal2:after ,
 ul#another:after ,
 ul#another2:after {
   content:"";
@@ -120,6 +122,7 @@ ul#another2:after {
   display:block;
 }
 ul#normal li ,
+ul#normal2 li ,
 ul#another li ,
 ul#another2 li {
   display:inline-block;
@@ -133,6 +136,7 @@ ul#another2 li {
   border-right:2px solid #DC5E9D;
 }
 ul#normal li:after ,
+ul#normal2 li:after ,
 ul#another li:after ,
 ul#another2 li:after {
   content:"";
@@ -140,11 +144,13 @@ ul#another2 li:after {
   display:block;
 }
 ul#normal li:nth-child(5) ,
+ul#normal2 li:nth-child(5) ,
 ul#another li:nth-child(5) ,
 ul#another2 li:nth-child(5) {
   border-right:2px solid transparent;
 }
 ul#normal li span ,
+ul#normal2 li span ,
 ul#another li span ,
 ul#another2 li span {
   width:40%;
@@ -152,6 +158,7 @@ ul#another2 li span {
   display:inline-block;
 }
 ul#normal li span img ,
+ul#normal2 li span img ,
 ul#another li span img ,
 ul#another2 li span img {
   width:100%;
@@ -159,21 +166,25 @@ ul#another2 li span img {
   border:1px solid #999;
 }
 ul#normal li span img.charaimg[link^="http"] ,
+ul#normal2 li span img.charaimg[link^="http"] ,
 ul#another li span img.charaimg[link^="http"] ,
 ul#another2 li span img.charaimg[link^="http"] {
   cursor:pointer;
 }
 ul#normal li span.nosp img ,
+ul#normal2 li span.nosp img ,
 ul#another li span.nosp img ,
 ul#another2 li span.nosp img {
   border:1px solid transparent;
 }
 ul#normal li span img.icons ,
+ul#normal2 li span img.icons ,
 ul#another li span img.icons ,
 ul#another2 li span img.icons {
   display:none;
 }
 
+ul#normal li span:nth-child(even) ,
 ul#normal li span:nth-child(even) ,
 ul#another li span:nth-child(even) {
   margin:5% 5% 0 7%;
@@ -208,6 +219,7 @@ ul#normal li#tokusei5 h2 ,
 ul#another li#tokusei5a h2 {
   color:#E0057B;
 }
+ul#normal2 li#tokusei5 span ,
 ul#another2 li#tokusei5a span {
   display:block;
   width:100%;
@@ -216,13 +228,17 @@ ul#another2 li#tokusei5a span {
   font-weight:bold;
   text-shadow:1px 1px 0 #fff,-1px 1px 0 #fff,1px -1px 0 #fff,-1px -1px 0 #fff;
 }
+ul#normal2 li#tokusei5 span {
+  color:#3782D2;
+}
 ul#another li h2 {
-  display:none;
+//  display:none;
 }
 div#hosoku4 {
   display:none;
 }
-body#equip div#hosoku4 {
+body#equip div#hosoku4 ,
+body#equip2 div#hosoku4 {
   display:block;
   padding:0px 0 10px;
   font-size:1.3vw;
@@ -238,6 +254,9 @@ div#hosoku4 span {
   vertical-align:middle;
 }
 /* ギア・SP属性表示のスタイル */
+body#equip2 ul#normal li span ,
+body#equip2 ul#another li span ,
+body#equip2 ul#another2 li span ,
 body#equip ul#normal li span ,
 body#equip ul#another li span ,
 body#equip ul#another2 li span {
@@ -248,6 +267,9 @@ body#equip ul#another2 li span {
   padding:0 5%;
   text-align:left;
 }
+body#equip2 ul#normal li span img ,
+body#equip2 ul#another li span img ,
+body#equip2 ul#another2 li span img ,
 body#equip ul#normal li span img ,
 body#equip ul#another li span img ,
 body#equip ul#another2 li span img {
@@ -258,6 +280,9 @@ body#equip ul#another2 li span img {
   float:left;
   display:block;
 }
+body#equip2 ul#normal li span img.icons ,
+body#equip2 ul#another li span img.icons ,
+body#equip2 ul#another2 li span img.icons ,
 body#equip ul#normal li span img.icons ,
 body#equip ul#another li span img.icons ,
 body#equip ul#another2 li span img.icons {
@@ -265,28 +290,46 @@ body#equip ul#another2 li span img.icons {
   width:9%;
   border:0;
 }
+body#equip2 ul#normal li span img.br ,
+body#equip2 ul#another li span img.br ,
+body#equip2 ul#another2 li span img.br ,
 body#equip ul#normal li span img.br ,
 body#equip ul#another li span img.br ,
 body#equip ul#another2 li span img.br {
   float:none;
 }
+body#equip2 ul#normal li span img.or ,
+body#equip2 ul#another li span img.or ,
+body#equip2 ul#another2 li span img.or ,
 body#equip ul#normal li span img.or ,
 body#equip ul#another li span img.or ,
 body#equip ul#another2 li span img.or {
   box-sizing:content-box;
   border-right:2px solid red;
 }
+body#equip2 ul#normal li span img.br::after ,
+body#equip2 ul#another li span img.br::after ,
+body#equip2 ul#another2 li span img.br::after ,
 body#equip ul#normal li span img.br::after ,
 body#equip ul#another li span img.br::after ,
 body#equip ul#another2 li span img.br::after {
   content: "\A";
   white-space: pre;
 }
+body#equip2 ul#normal li span.nosp img ,
+body#equip2 ul#another li span.nosp img ,
+body#equip2 ul#another2 li span.nosp img ,
 body#equip ul#normal li span.nosp img ,
 body#equip ul#another li span.nosp img ,
 body#equip ul#another2 li span.nosp img {
   border:0;
 }
+body#equip2 ul#normal li span.nosp2 ,
+body#equip2 ul#another li span.nosp2 ,
+body#equip2 ul#another2 li span.nosp2 ,
+body#equip2 ul#normal li span.nosp3 ,
+body#equip2 ul#another li span.nosp3 ,
+body#equip2 ul#another2 li span.nosp3 ,
 body#equip ul#normal li span.nosp2 ,
 body#equip ul#another li span.nosp2 ,
 body#equip ul#another2 li span.nosp2 ,

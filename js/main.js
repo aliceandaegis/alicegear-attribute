@@ -19,7 +19,10 @@ $(function() {
 
   if(mode == 'equip'){/* 過去の名残り ?m=gear でアクセスすると動作 */
     $('body').attr('id', 'equip');
-    $('h1').text($('h1').text()+'(ギア/SP属性)');
+    $('h1').text('属性出力ギア/SP対応表(恒常&コラボ)');
+  }else if(mode == 'equip2'){/* 過去の名残り ?m=gear でアクセスすると動作 */
+    $('body').attr('id', 'equip');
+    $('h1').text('属性出力ギア/SP対応表(アナザー)');
   }
 
   function getParam(name, url) {
@@ -134,9 +137,26 @@ $(function() {
   });
 
   $(document).on("click", "#menu a", function(){
-    if( $(this).attr("class") ){
+    var menuClass = $(this).attr("class");
+    if( menuClass ){
       $("body").attr({"id":$(this).attr("class")});
       $("h1").text($(this).attr("text"));
+    }
+    if(menuClass == 'equip'){
+      $("#normal").show();
+      $("#normal2").show();
+      $("#another").hide();
+      $("#another2").hide();
+    }else if(menuClass == 'equip2'){
+      $("#normal").hide();
+      $("#normal2").hide();
+      $("#another").show();
+      $("#another2").show();
+    }else{
+      $("#normal").show();
+      $("#normal2").show();
+      $("#another").show();
+      $("#another2").show();
     }
     return false;
   });
@@ -156,6 +176,13 @@ $(function() {
   AliceList("#tokusei3a",data,"3","10");/* 変質放出 アナザー */
   AliceList("#tokusei4a",data,"4","10");/* 出力変性 アナザー */
   AliceList("#tokusei5a",data,"5","10");/* 出力特性 アナザー */
+  if(mode == 'equip'){
+    $("#another").hide();
+    $("#another2").hide();
+  }else if(mode == 'equip2'){
+    $("#normal").hide();
+    $("#normal2").hide();
+  }
   $('#version').text(version);/* version出力 */
 
 });

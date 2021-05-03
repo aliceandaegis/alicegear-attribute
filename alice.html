@@ -12,7 +12,7 @@
   <script>
 
 /* 更新情報 必要に応じて書き換えてください */
-  var version = "Ver 1.1.4 | UPDATE:2021/04/29";
+  var version = "Ver 1.1.5 | UPDATE:2021/05/04";
 
 /*
   jsonファイルを外部に設置すると単にHTMLファイルを開いたときに動作しなくなるので当面はHTMLファイル内に
@@ -1604,7 +1604,7 @@
 
 <body>
 
-<archive id="menu">| <a href="alice.html" class="simple" text="属性出力キャラ対応表">通常版</a> | <a href="alice.html?m=equip" class="equip" text="属性出力キャラ対応表(ギア/SP属性)">ギア/SP属性版</a> |</archive>
+<archive id="menu">| <a href="alice.html" class="simple" text="属性出力キャラ対応表">通常版</a> | ギア/SP属性版：<a href="alice.html?m=equip" class="equip" text="属性出力ギア/SP対応表(恒常&amp;コラボ)">恒常&amp;コラボ</a> or <a href="alice.html?m=equip2" class="equip2" text="属性出力ギア/SP対応表(アナザー)">アナザー</a> |</archive>
 <archive id="version"></archive>
 
 <archive id="header">
@@ -1658,6 +1658,27 @@
 
     <li id="tokusei5">
       <h2>出力特性</h2>
+    </li>
+
+  </ul>
+
+  <!-- ノーマル文字出力用 -->
+  <ul id="normal2">
+
+    <li id="tokusei1">
+    </li>
+
+    <li id="tokusei2">
+    </li>
+
+    <li id="tokusei3">
+    </li>
+
+    <li id="tokusei4">
+    </li>
+
+    <li id="tokusei5">
+      <span>恒常&amp;コラボ</span>
     </li>
 
   </ul>
