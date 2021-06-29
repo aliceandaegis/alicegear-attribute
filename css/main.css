@@ -275,6 +275,7 @@ body#equip ul#another li span img ,
 body#equip ul#another2 li span img {
   width:50%;
   width:45%;
+  width:37.8%;
   box-sizing:border-box;
   border:1px solid #999;
   float:left;
@@ -288,6 +289,7 @@ body#equip ul#another li span img.icons ,
 body#equip ul#another2 li span img.icons {
   width:10%;
   width:9%;
+  width:7.5%;
   border:0;
 }
 body#equip2 ul#normal li span img.br ,
