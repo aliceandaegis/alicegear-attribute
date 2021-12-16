@@ -22,7 +22,7 @@ $(function() {
     $('h1').text('属性出力ギア/SP対応表(恒常&コラボ)');
   }else if(mode == 'equip2'){/* 過去の名残り ?m=gear でアクセスすると動作 */
     $('body').attr('id', 'equip');
-    $('h1').text('属性出力ギア/SP対応表(アナザー)');
+    $('h1').text('属性出力ギア/SP対応表(アナザー&ファクター)');
   }
 
   function getParam(name, url) {
@@ -45,6 +45,7 @@ $(function() {
       var data_category=target_data[i].category;
       if(target_type == data_type && target_category == data_category){/* 任意のデータだけ出力 */
         var collabostr="";
+        if(data_category == 11){ collaboCheck++; }
         if(data_category == 99){ collaboCheck++; collabostr='【コラボキャラ】 '; }
         if(collaboCheck == 1){/* 恒常とコラボの隙間を作成 */
           var youso = ulObj.children('span').length;
@@ -176,6 +177,12 @@ $(function() {
   AliceList("#tokusei3a",data,"3","10");/* 変質放出 アナザー */
   AliceList("#tokusei4a",data,"4","10");/* 出力変性 アナザー */
   AliceList("#tokusei5a",data,"5","10");/* 出力特性 アナザー */
+  AliceList("#tokusei1a",data,"1","11");/* 放出特化 ファクター */
+  AliceList("#tokusei2a",data,"2","11");/* 特質放出 ファクター */
+  AliceList("#tokusei3a",data,"3","11");/* 変質放出 ファクター */
+  AliceList("#tokusei4a",data,"4","11");/* 出力変性 ファクター */
+  AliceList("#tokusei5a",data,"5","11");/* 出力特性 ファクター */
+
   if(mode == 'equip'){
     $("#another").hide();
     $("#another2").hide();
