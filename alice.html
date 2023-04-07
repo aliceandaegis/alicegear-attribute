@@ -12,7 +12,7 @@
   <script>
 
 /* 更新情報 必要に応じて書き換えてください */
-  var version = "Ver 1.1.6 | UPDATE:2023/03/23";
+  var version = "Ver 1.1.7 | UPDATE:2023/04/07";
 
 
 /*
@@ -21,7 +21,7 @@
 
   { ... },
   でキャラデータがワンセット。各項目は下記の通り。
-  id       = 番号(101～FAGコラボ、201～SOL/DTAコラボ、301～ｽﾄﾗｲｸｳｨｯﾁｰｽﾞ、401～ﾊﾞﾄﾙｶﾞｰﾙﾊｲｽｸｰﾙ、501～ﾃﾞｯﾄﾞｵｱｱﾗｲﾌﾞ、601～東京ﾄﾞｰﾙｽﾞ、701～ﾀﾞﾗｲｱｽ、801～ｼｭﾀｲﾝｽﾞ･ｹﾞｰﾄ、811～幼女戦記、821～ﾀﾞｰﾃｨﾍﾟｱ)
+  id       = 番号(101～FAGコラボ、151～アニメ、201～SOL/DTAコラボ、301～ｽﾄﾗｲｸｳｨｯﾁｰｽﾞ、401～ﾊﾞﾄﾙｶﾞｰﾙﾊｲｽｸｰﾙ、501～ﾃﾞｯﾄﾞｵｱｱﾗｲﾌﾞ、601～東京ﾄﾞｰﾙｽﾞ、701～ﾀﾞﾗｲｱｽ、801～ｼｭﾀｲﾝｽﾞ･ｹﾞｰﾄ、811～幼女戦記、821～ﾀﾞｰﾃｨﾍﾟｱ)
   type     = 1=放出特化、2=特質放出、3=変質放出、4=出力変性、5=出力特性
   src      = 画像ファイル名
   name     = キャラクター名
@@ -1793,8 +1793,8 @@
       "type": "4",
       "src": "normal-gourai.png",
       "name": "轟雷",
-      "equip1": "1",
-      "equip2": "3",
+      "equip1": "1/1",
+      "equip2": "3/3?",
       "equip3": "1",
       "equip4": "5",
       "sp": "2",
@@ -1808,8 +1808,8 @@
       "src": "normal-stylet.png",
       "name": "スティレット",
       "equip1": "1/2",
-      "equip2": "3",
-      "equip3": "1",
+      "equip2": "3/3?",
+      "equip3": "1/1",
       "equip4": "5",
       "sp": "3",
       "attr": "4",
@@ -1821,9 +1821,9 @@
       "type": "3",
       "src": "normal-baselard.png",
       "name": "バーゼラルド",
-      "equip1": "2",
+      "equip1": "2/2?",
       "equip2": "3",
-      "equip3": "2",
+      "equip3": "2/25",
       "equip4": "5",
       "sp": "2",
       "attr": "1",
@@ -1836,7 +1836,7 @@
       "src": "normal-hresvelgr.png",
       "name": "フレズヴェルク",
       "equip1": "2",
-      "equip2": "3",
+      "equip2": "3/3?",
       "equip3": "3",
       "equip4": "2",
       "sp": "3",
@@ -1851,9 +1851,9 @@
       "name": "源内 あお",
       "equip1": "1",
       "equip2": "3",
-      "equip3": "15?",
+      "equip3": "15",
       "equip4": "3",
-      "sp": "4?",
+      "sp": "4",
       "attr": "3",
       "link": "https://wikiwiki.jp/alicegear/%E6%BA%90%E5%86%85%E3%81%82%E3%81%8A",
       "category": "99"
@@ -1866,10 +1866,24 @@
       "equip1": "2",
       "equip2": "3",
       "equip3": "1",
-      "equip4": "25?",
-      "sp": "3?",
+      "equip4": "25",
+      "sp": "3",
       "attr": "4",
       "link": "https://wikiwiki.jp/alicegear/%E5%AF%BF%E6%AD%A6%E5%B8%8C%E5%AD%90",
+      "category": "99"
+    },
+    {
+      "id": "151",
+      "type": "4",
+      "src": "normal-nodoka.png",
+      "name": "高幡 のどか",
+      "equip1": "?",
+      "equip2": "?",
+      "equip3": "?",
+      "equip4": "?",
+      "sp": "2",
+      "attr": "1",
+      "link": "https://wikiwiki.jp/alicegear/%E9%AB%98%E5%B9%A1%E3%81%AE%E3%81%A9%E3%81%8B",
       "category": "99"
     },
     {
@@ -2342,15 +2356,15 @@
 /* ↑↑↑↑ここまでキャラクターデータ↑↑↑↑ */
 /* 以下は基本編集しなくても大丈夫です */
   </script>
-  <link rel="stylesheet" href="./css/main.css?v=20200620_1">
-  <script src="./js/jquery.min.js?v=20200620_1"></script>
-  <script src="./js/main.js?v=20201005_1"></script>
+  <link rel="stylesheet" href="./css/main.css?v=20230407">
+  <script src="./js/jquery.min.js?v=20230407"></script>
+  <script src="./js/main.js?v=20230407"></script>
 </head>
 
 <body>
 
-<archive id="menu">| <a href="alice.html" class="simple" text="属性出力キャラ対応表">通常版</a> | ギア/SP属性版：<a href="alice.html?m=equip" class="equip" text="属性出力ギア/SP対応表(恒常&amp;コラボ)">恒常&amp;コラボ</a> or <a href="alice.html?m=equip2" class="equip2" text="属性出力ギア/SP対応表(アナザー&amp;ファクター)">アナザー&amp;ファクター</a> |</archive>
 <archive id="version"></archive>
+<archive id="menu">| <a href="alice.html" class="simple" text="属性出力キャラ対応表">通常版</a> | ギア/SP属性版：<a href="alice.html?m=equip" class="equip" text="属性出力ギア/SP対応表(恒常)">恒常</a> or <a href="alice.html?m=equip3" class="equip3" text="属性出力ギア/SP対応表(コラボ)">コラボ</a> or <a href="alice.html?m=equip2" class="equip2" text="属性出力ギア/SP対応表(アナザー)">アナザー</a> or <a href="alice.html?m=equip4" class="equip4" text="属性出力ギア/SP対応表(ファクター)">ファクター</a> |</archive>
 
 <archive id="header">
   <h1>属性出力キャラ対応表</h1>
@@ -2423,7 +2437,54 @@
     </li>
 
     <li id="tokusei5">
-      <span>恒常&amp;コラボ</span>
+      <span>恒常</span>
+    </li>
+
+  </ul>
+
+
+  <!-- コラボ出力用 -->
+  <ul id="collabo">
+
+    <li id="tokusei1c">
+      <h2>放出特化</h2>
+    </li>
+
+    <li id="tokusei2c">
+      <h2>特質放出</h2>
+    </li>
+
+    <li id="tokusei3c">
+      <h2>変質放出</h2>
+    </li>
+
+    <li id="tokusei4c">
+      <h2>出力変性</h2>
+    </li>
+
+    <li id="tokusei5c">
+      <h2>出力特性</h2>
+    </li>
+
+  </ul>
+
+  <!-- コラボ文字出力用 -->
+  <ul id="collabo2">
+
+    <li id="tokusei1c">
+    </li>
+
+    <li id="tokusei2c">
+    </li>
+
+    <li id="tokusei3c">
+    </li>
+
+    <li id="tokusei4c">
+    </li>
+
+    <li id="tokusei5c">
+      <span>コラボ</span>
     </li>
 
   </ul>
@@ -2470,7 +2531,53 @@
     </li>
 
     <li id="tokusei5a">
-      <span>アナザー&amp;<br>ファクター</span>
+      <span>アナザー</span>
+    </li>
+  </ul>
+
+
+  <!-- ファクター出力用 -->
+  <ul id="factor">
+
+    <li id="tokusei1f">
+      <h2>放出特化</h2>
+    </li>
+
+    <li id="tokusei2f">
+      <h2>特質放出</h2>
+    </li>
+
+    <li id="tokusei3f">
+      <h2>変質放出</h2>
+    </li>
+
+    <li id="tokusei4f">
+      <h2>出力変性</h2>
+    </li>
+
+    <li id="tokusei5f">
+      <h2>出力特性</h2>
+    </li>
+
+  </ul>
+
+  <!-- ファクター文字出力用 -->
+  <ul id="factor2">
+
+    <li id="tokusei1f">
+    </li>
+
+    <li id="tokusei2f">
+    </li>
+
+    <li id="tokusei3f">
+    </li>
+
+    <li id="tokusei4f">
+    </li>
+
+    <li id="tokusei5f">
+      <span>ファクター</span>
     </li>
   </ul>
 </archive>

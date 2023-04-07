@@ -19,10 +19,16 @@ $(function() {
 
   if(mode == 'equip'){/* 過去の名残り ?m=gear でアクセスすると動作 */
     $('body').attr('id', 'equip');
-    $('h1').text('属性出力ギア/SP対応表(恒常&コラボ)');
-  }else if(mode == 'equip2'){/* 過去の名残り ?m=gear でアクセスすると動作 */
-    $('body').attr('id', 'equip');
-    $('h1').text('属性出力ギア/SP対応表(アナザー&ファクター)');
+    $('h1').text('属性出力ギア/SP対応表(恒常)');
+  }else if(mode == 'equip2'){
+    $('body').attr('id', 'equip2');
+    $('h1').text('属性出力ギア/SP対応表(アナザー)');
+  }else if(mode == 'equip3'){
+    $('body').attr('id', 'equip3');
+    $('h1').text('属性出力ギア/SP対応表(コラボ)');
+  }else if(mode == 'equip4'){
+    $('body').attr('id', 'equip4');
+    $('h1').text('属性出力ギア/SP対応表(ファクター)');
   }
 
   function getParam(name, url) {
@@ -45,8 +51,8 @@ $(function() {
       var data_category=target_data[i].category;
       if(target_type == data_type && target_category == data_category){/* 任意のデータだけ出力 */
         var collabostr="";
-        if(data_category == 11){ collaboCheck++; }
-        if(data_category == 99){ collaboCheck++; collabostr='【コラボキャラ】 '; }
+        if(data_category == 11){ /*collaboCheck++;*/ }
+        if(data_category == 99){ /*collaboCheck++;*/ collabostr='【コラボキャラ】 '; }
         if(collaboCheck == 1){/* 恒常とコラボの隙間を作成 */
           var youso = ulObj.children('span').length;
           if( (youso % 2) != 0 ){
@@ -148,16 +154,46 @@ $(function() {
       $("#normal2").show();
       $("#another").hide();
       $("#another2").hide();
+      $("#collabo").hide();
+      $("#collabo2").hide();
+      $("#factor").hide();
+      $("#factor2").hide();
     }else if(menuClass == 'equip2'){
       $("#normal").hide();
       $("#normal2").hide();
       $("#another").show();
       $("#another2").show();
+      $("#collabo").hide();
+      $("#collabo2").hide();
+      $("#factor").hide();
+      $("#factor2").hide();
+    }else if(menuClass == 'equip3'){
+      $("#normal").hide();
+      $("#normal2").hide();
+      $("#another").hide();
+      $("#another2").hide();
+      $("#collabo").show();
+      $("#collabo2").show();
+      $("#factor").hide();
+      $("#factor2").hide();
+    }else if(menuClass == 'equip4'){
+      $("#normal").hide();
+      $("#normal2").hide();
+      $("#another").hide();
+      $("#another2").hide();
+      $("#collabo").hide();
+      $("#collabo2").hide();
+      $("#factor").show();
+      $("#factor2").show();
     }else{
       $("#normal").show();
       $("#normal2").show();
       $("#another").show();
       $("#another2").show();
+      $("#collabo").show();
+      $("#collabo2").show();
+      $("#factor").show();
+      $("#factor2").show();
     }
     return false;
   });
@@ -167,28 +203,50 @@ $(function() {
   AliceList("#tokusei3",data,"3","");/* 変質放出 */
   AliceList("#tokusei4",data,"4","");/* 出力変性 */
   AliceList("#tokusei5",data,"5","");/* 出力特性 */
-  AliceList("#tokusei1",data,"1","99");/* 放出特化 コラボ */
-  AliceList("#tokusei2",data,"2","99");/* 特質放出 コラボ */
-  AliceList("#tokusei3",data,"3","99");/* 変質放出 コラボ */
-  AliceList("#tokusei4",data,"4","99");/* 出力変性 コラボ */
-  AliceList("#tokusei5",data,"5","99");/* 出力特性 コラボ */
+  AliceList("#tokusei1c",data,"1","99");/* 放出特化 コラボ */
+  AliceList("#tokusei2c",data,"2","99");/* 特質放出 コラボ */
+  AliceList("#tokusei3c",data,"3","99");/* 変質放出 コラボ */
+  AliceList("#tokusei4c",data,"4","99");/* 出力変性 コラボ */
+  AliceList("#tokusei5c",data,"5","99");/* 出力特性 コラボ */
   AliceList("#tokusei1a",data,"1","10");/* 放出特化 アナザー */
   AliceList("#tokusei2a",data,"2","10");/* 特質放出 アナザー */
   AliceList("#tokusei3a",data,"3","10");/* 変質放出 アナザー */
   AliceList("#tokusei4a",data,"4","10");/* 出力変性 アナザー */
   AliceList("#tokusei5a",data,"5","10");/* 出力特性 アナザー */
-  AliceList("#tokusei1a",data,"1","11");/* 放出特化 ファクター */
-  AliceList("#tokusei2a",data,"2","11");/* 特質放出 ファクター */
-  AliceList("#tokusei3a",data,"3","11");/* 変質放出 ファクター */
-  AliceList("#tokusei4a",data,"4","11");/* 出力変性 ファクター */
-  AliceList("#tokusei5a",data,"5","11");/* 出力特性 ファクター */
+  AliceList("#tokusei1f",data,"1","11");/* 放出特化 ファクター */
+  AliceList("#tokusei2f",data,"2","11");/* 特質放出 ファクター */
+  AliceList("#tokusei3f",data,"3","11");/* 変質放出 ファクター */
+  AliceList("#tokusei4f",data,"4","11");/* 出力変性 ファクター */
+  AliceList("#tokusei5f",data,"5","11");/* 出力特性 ファクター */
 
   if(mode == 'equip'){
     $("#another").hide();
     $("#another2").hide();
+    $("#collabo").hide();
+    $("#collabo2").hide();
+    $("#factor").hide();
+    $("#factor2").hide();
   }else if(mode == 'equip2'){
     $("#normal").hide();
     $("#normal2").hide();
+    $("#collabo").hide();
+    $("#collabo2").hide();
+    $("#factor").hide();
+    $("#factor2").hide();
+  }else if(mode == 'equip3'){
+    $("#normal").hide();
+    $("#normal2").hide();
+    $("#another").hide();
+    $("#another2").hide();
+    $("#factor").hide();
+    $("#factor2").hide();
+  }else if(mode == 'equip4'){
+    $("#normal").hide();
+    $("#normal2").hide();
+    $("#collabo").hide();
+    $("#collabo2").hide();
+    $("#another").hide();
+    $("#another2").hide();
   }
   $('#version').text(version);/* version出力 */
 

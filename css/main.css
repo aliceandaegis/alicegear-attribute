@@ -73,10 +73,7 @@ div#hosoku3 img {
 archive#version {
   display:block;
   color:#666;
-  text-align:right;
   font-size:1vw;
-  display:inline-block;
-  width:49%;
 }
 archive#menu {
   display:block;
@@ -84,7 +81,6 @@ archive#menu {
   font-size:1.5vw;
   color:#336699;
   display:inline-block;
-  width:50%;
 }
 archive#notes {
   display:block;
@@ -100,6 +96,10 @@ archive#notes {
 /* 通常のスタイル */
 ul#normal ,
 ul#normal2 ,
+ul#collabo ,
+ul#collabo2 ,
+ul#factor ,
+ul#factor2 ,
 ul#another ,
 ul#another2 {
   display:table;
@@ -113,8 +113,20 @@ ul#another ,
 ul#another2 {
   background:#F9DEC9;
 }
+ul#collabo ,
+ul#collabo2 {
+  background:#D7FFC5;
+}
+ul#factor ,
+ul#factor2 {
+  background:#D0C6FF;
+}
 ul#normal:after ,
 ul#normal2:after ,
+ul#collabo:after ,
+ul#collabo2:after ,
+ul#factor:after ,
+ul#factor2:after ,
 ul#another:after ,
 ul#another2:after {
   content:"";
@@ -123,6 +135,10 @@ ul#another2:after {
 }
 ul#normal li ,
 ul#normal2 li ,
+ul#collabo li ,
+ul#collabo2 li ,
+ul#factor li ,
+ul#factor2 li ,
 ul#another li ,
 ul#another2 li {
   display:inline-block;
@@ -137,6 +153,10 @@ ul#another2 li {
 }
 ul#normal li:after ,
 ul#normal2 li:after ,
+ul#collabo li:after ,
+ul#collabo2 li:after ,
+ul#factor li:after ,
+ul#factor2 li:after ,
 ul#another li:after ,
 ul#another2 li:after {
   content:"";
@@ -145,12 +165,20 @@ ul#another2 li:after {
 }
 ul#normal li:nth-child(5) ,
 ul#normal2 li:nth-child(5) ,
+ul#collabo li:nth-child(5) ,
+ul#collabo2 li:nth-child(5) ,
+ul#factor li:nth-child(5) ,
+ul#factor2 li:nth-child(5) ,
 ul#another li:nth-child(5) ,
 ul#another2 li:nth-child(5) {
   border-right:2px solid transparent;
 }
 ul#normal li span ,
 ul#normal2 li span ,
+ul#collabo li span ,
+ul#collabo2 li span ,
+ul#factor li span ,
+ul#factor2 li span ,
 ul#another li span ,
 ul#another2 li span {
   width:40%;
@@ -159,6 +187,10 @@ ul#another2 li span {
 }
 ul#normal li span img ,
 ul#normal2 li span img ,
+ul#collabo li span img ,
+ul#collabo2 li span img ,
+ul#factor li span img ,
+ul#factor2 li span img ,
 ul#another li span img ,
 ul#another2 li span img {
   width:100%;
@@ -167,59 +199,88 @@ ul#another2 li span img {
 }
 ul#normal li span img.charaimg[link^="http"] ,
 ul#normal2 li span img.charaimg[link^="http"] ,
+ul#collabo li span img.charaimg[link^="http"] ,
+ul#collabo2 li span img.charaimg[link^="http"] ,
+ul#factor li span img.charaimg[link^="http"] ,
+ul#factor2 li span img.charaimg[link^="http"] ,
 ul#another li span img.charaimg[link^="http"] ,
 ul#another2 li span img.charaimg[link^="http"] {
   cursor:pointer;
 }
 ul#normal li span.nosp img ,
 ul#normal2 li span.nosp img ,
+ul#collabo li span.nosp img ,
+ul#collabo2 li span.nosp img ,
+ul#factor li span.nosp img ,
+ul#factor2 li span.nosp img ,
 ul#another li span.nosp img ,
 ul#another2 li span.nosp img {
   border:1px solid transparent;
 }
 ul#normal li span img.icons ,
 ul#normal2 li span img.icons ,
+ul#collabo li span img.icons ,
+ul#collabo2 li span img.icons ,
+ul#factor li span img.icons ,
+ul#factor2 li span img.icons ,
 ul#another li span img.icons ,
 ul#another2 li span img.icons {
   display:none;
 }
 
 ul#normal li span:nth-child(even) ,
-ul#normal li span:nth-child(even) ,
+ul#collabo li span:nth-child(even) ,
+ul#factor li span:nth-child(even) ,
 ul#another li span:nth-child(even) {
   margin:5% 5% 0 7%;
 }
 ul#normal li span:nth-child(odd) ,
+ul#collabo li span:nth-child(odd) ,
+ul#factor li span:nth-child(odd) ,
 ul#another li span:nth-child(odd) {
   margin:5% 5% 0 0;
 }
+ul#collabo li span:nth-of-type(1) ,
 ul#normal li span:nth-of-type(1) {
   margin-top:0;
 }
+ul#collabo li span:nth-of-type(2) ,
 ul#normal li span:nth-of-type(2) {
   margin-top:0;
 }
 ul#normal li#tokusei1 h2 ,
+ul#collabo li#tokusei1c h2 ,
+ul#factor li#tokusei1f h2 ,
 ul#another li#tokusei1a h2 {
   color:#0899E8;
 }
 ul#normal li#tokusei2 h2 ,
+ul#collabo li#tokusei2c h2 ,
+ul#factor li#tokusei2f h2 ,
 ul#another li#tokusei2a h2 {
   color:#0AADE8;
 }
 ul#normal li#tokusei3 h2 ,
+ul#collabo li#tokusei3c h2 ,
+ul#factor li#tokusei3f h2 ,
 ul#another li#tokusei3a h2 {
   color:#8D8FC0;
 }
 ul#normal li#tokusei4 h2 ,
+ul#collabo li#tokusei4c h2 ,
+ul#factor li#tokusei4f h2 ,
 ul#another li#tokusei4a h2 {
   color:#E45197;
 }
 ul#normal li#tokusei5 h2 ,
+ul#collabo li#tokusei5c h2 ,
+ul#factor li#tokusei5f h2 ,
 ul#another li#tokusei5a h2 {
   color:#E0057B;
 }
 ul#normal2 li#tokusei5 span ,
+ul#collabo2 li#tokusei5c span ,
+ul#factor2 li#tokusei5f span ,
 ul#another2 li#tokusei5a span {
   display:block;
   width:100%;
@@ -231,6 +292,15 @@ ul#another2 li#tokusei5a span {
 ul#normal2 li#tokusei5 span {
   color:#3782D2;
 }
+ul#another2 li#tokusei5a span {
+  color:#E0057B;
+}
+ul#collabo2 li#tokusei5c span {
+  color:#119900;
+}
+ul#factor2 li#tokusei5f span {
+  color:#6805E0;
+}
 ul#another li h2 {
 //  display:none;
 }
@@ -238,6 +308,8 @@ div#hosoku4 {
   display:none;
 }
 body#equip div#hosoku4 ,
+body#equip4 div#hosoku4 ,
+body#equip3 div#hosoku4 ,
 body#equip2 div#hosoku4 {
   display:block;
   padding:0px 0 10px;
@@ -254,12 +326,10 @@ div#hosoku4 span {
   vertical-align:middle;
 }
 /* ギア・SP属性表示のスタイル */
-body#equip2 ul#normal li span ,
+body#equip4 ul#factor li span ,
+body#equip3 ul#collabo li span ,
 body#equip2 ul#another li span ,
-body#equip2 ul#another2 li span ,
-body#equip ul#normal li span ,
-body#equip ul#another li span ,
-body#equip ul#another2 li span {
+body#equip ul#normal li span {
   width:100%;
   display:inline-block;
   margin:5% 0 0;
@@ -267,12 +337,10 @@ body#equip ul#another2 li span {
   padding:0 5%;
   text-align:left;
 }
-body#equip2 ul#normal li span img ,
+body#equip4 ul#factor li span img ,
+body#equip3 ul#collabo li span img ,
 body#equip2 ul#another li span img ,
-body#equip2 ul#another2 li span img ,
-body#equip ul#normal li span img ,
-body#equip ul#another li span img ,
-body#equip ul#another2 li span img {
+body#equip ul#normal li span img {
   width:50%;
   width:45%;
   width:37.8%;
@@ -281,62 +349,48 @@ body#equip ul#another2 li span img {
   float:left;
   display:block;
 }
-body#equip2 ul#normal li span img.icons ,
+body#equip4 ul#factor li span img.icons ,
+body#equip3 ul#collabo li span img.icons ,
 body#equip2 ul#another li span img.icons ,
-body#equip2 ul#another2 li span img.icons ,
-body#equip ul#normal li span img.icons ,
-body#equip ul#another li span img.icons ,
-body#equip ul#another2 li span img.icons {
+body#equip ul#normal li span img.icons  {
   width:10%;
   width:9%;
   width:7.5%;
   border:0;
 }
-body#equip2 ul#normal li span img.br ,
+body#equip4 ul#factor li span img.br ,
+body#equip3 ul#collabo li span img.br ,
 body#equip2 ul#another li span img.br ,
-body#equip2 ul#another2 li span img.br ,
-body#equip ul#normal li span img.br ,
-body#equip ul#another li span img.br ,
-body#equip ul#another2 li span img.br {
+body#equip ul#normal li span img.br {
   float:none;
 }
-body#equip2 ul#normal li span img.or ,
+body#equip4 ul#factor li span img.or ,
+body#equip3 ul#collabo li span img.or ,
 body#equip2 ul#another li span img.or ,
-body#equip2 ul#another2 li span img.or ,
-body#equip ul#normal li span img.or ,
-body#equip ul#another li span img.or ,
-body#equip ul#another2 li span img.or {
+body#equip ul#normal li span img.or  {
   box-sizing:content-box;
   border-right:2px solid red;
 }
-body#equip2 ul#normal li span img.br::after ,
+body#equip4 ul#factor li span img.br::after ,
+body#equip3 ul#collabo li span img.br::after ,
 body#equip2 ul#another li span img.br::after ,
-body#equip2 ul#another2 li span img.br::after ,
-body#equip ul#normal li span img.br::after ,
-body#equip ul#another li span img.br::after ,
-body#equip ul#another2 li span img.br::after {
+body#equip ul#normal li span img.br::after {
   content: "\A";
   white-space: pre;
 }
-body#equip2 ul#normal li span.nosp img ,
+body#equip2 ul#factor li span.nosp img ,
+body#equip3 ul#collabo li span.nosp img ,
 body#equip2 ul#another li span.nosp img ,
-body#equip2 ul#another2 li span.nosp img ,
-body#equip ul#normal li span.nosp img ,
-body#equip ul#another li span.nosp img ,
-body#equip ul#another2 li span.nosp img {
+body#equip ul#normal li span.nosp img  {
   border:0;
 }
-body#equip2 ul#normal li span.nosp2 ,
+body#equip4 ul#factor li span.nosp2 ,
+body#equip4 ul#factor li span.nosp3 ,
+body#equip3 ul#collabo li span.nosp2 ,
+body#equip3 ul#collabo li span.nosp3 ,
 body#equip2 ul#another li span.nosp2 ,
-body#equip2 ul#another2 li span.nosp2 ,
-body#equip2 ul#normal li span.nosp3 ,
 body#equip2 ul#another li span.nosp3 ,
-body#equip2 ul#another2 li span.nosp3 ,
 body#equip ul#normal li span.nosp2 ,
-body#equip ul#another li span.nosp2 ,
-body#equip ul#another2 li span.nosp2 ,
-body#equip ul#normal li span.nosp3 ,
-body#equip ul#another li span.nosp3 ,
-body#equip ul#another2 li span.nosp3 {
+body#equip ul#normal li span.nosp3 {
   display:none;
 }
