@@ -69,7 +69,7 @@ $(function() {
         if( typeof target_data[i].link !== 'undefined' && target_data[i].link ){
           link = target_data[i].link;
         }
-        ulObj.append($("<span>").attr({"class":"chara"+i}));/* spanタグ生成 */
+        ulObj.append($("<span>").attr({ "class":"charadatas chara"+i, "data-name":target_data[i].name }));/* spanタグ生成 */
         ulObj.children(".chara"+i).append($("<img>").attr({"src":'./img/'+target_data[i].src,"title":target_data[i].id+'. '+collabostr+target_data[i].name,"class":"charaimg","link":link}));/* キャラimgタグ生成 */
 
 //        if(mode == 'gear'){
@@ -249,5 +249,17 @@ $(function() {
     $("#another2").hide();
   }
   $('#version').text(version);/* version出力 */
+
+  /* キャラ名による検索 */
+  $(document).on("keyup", "input.search", function(){
+    $data_name = $(this).val();
+    console.log( $data_name );
+    if( $data_name !== "" ){
+      $("span.charadatas").hide();
+      $("span[data-name *= "+ $data_name +"]").show();
+    }else{
+      $("span.charadatas").show();
+    }
+  });
 
 });
