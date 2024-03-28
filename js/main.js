@@ -29,6 +29,9 @@ $(function() {
   }else if(mode == 'equip4'){
     $('body').attr('id', 'equip4');
     $('h1').text('属性出力ギア/SP対応表(ファクター)');
+  }else if(mode == 'equip5'){
+    $('body').attr('id', 'equip4');
+    $('h1').text('属性出力ギア/SP対応表(ステラー)');
   }
 
   function getParam(name, url) {
@@ -52,6 +55,7 @@ $(function() {
       if(target_type == data_type && target_category == data_category){/* 任意のデータだけ出力 */
         var collabostr="";
         if(data_category == 11){ /*collaboCheck++;*/ }
+        if(data_category == 12){ /*collaboCheck++;*/ }
         if(data_category == 99){ /*collaboCheck++;*/ collabostr='【コラボキャラ】 '; }
         if(collaboCheck == 1){/* 恒常とコラボの隙間を作成 */
           var youso = ulObj.children('span').length;
@@ -158,6 +162,8 @@ $(function() {
       $("#collabo2").hide();
       $("#factor").hide();
       $("#factor2").hide();
+      $("#stellar").hide();
+      $("#stellar2").hide();
     }else if(menuClass == 'equip2'){
       $("#normal").hide();
       $("#normal2").hide();
@@ -167,6 +173,8 @@ $(function() {
       $("#collabo2").hide();
       $("#factor").hide();
       $("#factor2").hide();
+      $("#stellar").hide();
+      $("#stellar2").hide();
     }else if(menuClass == 'equip3'){
       $("#normal").hide();
       $("#normal2").hide();
@@ -176,6 +184,8 @@ $(function() {
       $("#collabo2").show();
       $("#factor").hide();
       $("#factor2").hide();
+      $("#stellar").hide();
+      $("#stellar2").hide();
     }else if(menuClass == 'equip4'){
       $("#normal").hide();
       $("#normal2").hide();
@@ -185,6 +195,19 @@ $(function() {
       $("#collabo2").hide();
       $("#factor").show();
       $("#factor2").show();
+      $("#stellar").hide();
+      $("#stellar2").hide();
+    }else if(menuClass == 'equip5'){
+      $("#normal").hide();
+      $("#normal2").hide();
+      $("#another").hide();
+      $("#another2").hide();
+      $("#collabo").hide();
+      $("#collabo2").hide();
+      $("#factor").hide();
+      $("#factor2").hide();
+      $("#stellar").show();
+      $("#stellar2").show();
     }else{
       $("#normal").show();
       $("#normal2").show();
@@ -194,6 +217,8 @@ $(function() {
       $("#collabo2").show();
       $("#factor").show();
       $("#factor2").show();
+      $("#stellar").show();
+      $("#stellar2").show();
     }
     return false;
   });
@@ -218,6 +243,11 @@ $(function() {
   AliceList("#tokusei3f",data,"3","11");/* 変質放出 ファクター */
   AliceList("#tokusei4f",data,"4","11");/* 出力変性 ファクター */
   AliceList("#tokusei5f",data,"5","11");/* 出力特性 ファクター */
+  AliceList("#tokusei1s",data,"1","12");/* 放出特化 ステラー */
+  AliceList("#tokusei2s",data,"2","12");/* 特質放出 ステラー */
+  AliceList("#tokusei3s",data,"3","12");/* 変質放出 ステラー */
+  AliceList("#tokusei4s",data,"4","12");/* 出力変性 ステラー */
+  AliceList("#tokusei5s",data,"5","12");/* 出力特性 ステラー */
 
   if(mode == 'equip'){
     $("#another").hide();
@@ -226,6 +256,8 @@ $(function() {
     $("#collabo2").hide();
     $("#factor").hide();
     $("#factor2").hide();
+    $("#stellar").hide();
+    $("#stellar2").hide();
   }else if(mode == 'equip2'){
     $("#normal").hide();
     $("#normal2").hide();
@@ -233,6 +265,8 @@ $(function() {
     $("#collabo2").hide();
     $("#factor").hide();
     $("#factor2").hide();
+    $("#stellar").hide();
+    $("#stellar2").hide();
   }else if(mode == 'equip3'){
     $("#normal").hide();
     $("#normal2").hide();
@@ -240,6 +274,8 @@ $(function() {
     $("#another2").hide();
     $("#factor").hide();
     $("#factor2").hide();
+    $("#stellar").hide();
+    $("#stellar2").hide();
   }else if(mode == 'equip4'){
     $("#normal").hide();
     $("#normal2").hide();
@@ -247,6 +283,17 @@ $(function() {
     $("#collabo2").hide();
     $("#another").hide();
     $("#another2").hide();
+    $("#stellar").hide();
+    $("#stellar2").hide();
+  }else if(mode == 'equip5'){
+    $("#normal").hide();
+    $("#normal2").hide();
+    $("#collabo").hide();
+    $("#collabo2").hide();
+    $("#another").hide();
+    $("#another2").hide();
+    $("#factor").hide();
+    $("#factor2").hide();
   }
   $('#version').text(version);/* version出力 */
 

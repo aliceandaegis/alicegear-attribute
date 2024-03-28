@@ -12,7 +12,7 @@
   <script>
 
 /* 更新情報 必要に応じて書き換えてください */
-  var version = "Ver 1.1.8 | UPDATE:2024/03/14";
+  var version = "Ver 1.1.9 | UPDATE:2024/03/28";
 
 
 /*
@@ -25,7 +25,7 @@
   type     = 1=放出特化、2=特質放出、3=変質放出、4=出力変性、5=出力特性
   src      = 画像ファイル名
   name     = キャラクター名
-  category = アナザーは10、ファクターは11、コラボは99、それ以外は空欄
+  category = アナザーは10、ファクターは11、ステラーは12、コラボは99、それ以外は空欄
 
   equip1   = ショット：1=実弾、2=エネルギー弾（複数=12、派生=1/2）
   equip2   = クロス：3=斬撃、4=打撃（複数の場合=34）
@@ -302,6 +302,20 @@
       "attr": "4",
       "link": "https://wikiwiki.jp/alicegear/%E5%B0%8F%E9%B3%A5%E9%81%8A%E6%80%9C/%E3%83%8D%E3%82%AF%E3%82%B9%E3%83%88",
       "category": "11"
+    },
+    {
+      "id": "6",
+      "type": "5",
+      "src": "stellar-rei.png",
+      "name": "小鳥遊 怜 / テンペランス",
+      "equip1": "2",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "5",
+      "sp": "2?",
+      "attr": "3",
+      "link": "https://wikiwiki.jp/alicegear/%E5%B0%8F%E9%B3%A5%E9%81%8A%E6%80%9C/%E3%83%86%E3%83%B3%E3%83%9A%E3%83%A9%E3%83%B3%E3%82%B9",
+      "category": "12"
     },
     {
       "id": "7",
@@ -1031,6 +1045,20 @@
       "attr": "4",
       "link": "https://wikiwiki.jp/alicegear/%E7%B4%BA%E5%A0%82%E5%9C%B0%E8%A1%9B%E7%90%86%E6%99%A8%E6%98%9F",
       "category": "10"
+    },
+    {
+      "id": "26",
+      "type": "2",
+      "src": "stellar-chieri.png",
+      "name": "紺堂 地衛理 / エンプレス",
+      "equip1": "2/23?",
+      "equip2": "3",
+      "equip3": "2",
+      "equip4": "5",
+      "sp": "2?",
+      "attr": "3",
+      "link": "https://wikiwiki.jp/alicegear/%E7%B4%BA%E5%A0%82%E5%9C%B0%E8%A1%9B%E7%90%86/%E3%82%A8%E3%83%B3%E3%83%97%E3%83%AC%E3%82%B9",
+      "category": "12"
     },
     {
       "id": "27",
@@ -2742,7 +2770,7 @@
 <body>
 
 <archive id="version"></archive>
-<archive id="menu">| <a href="alice.html" class="simple" text="属性出力キャラ対応表">通常版</a> | ギア/SP属性版：<a href="alice.html?m=equip" class="equip" text="属性出力ギア/SP対応表(恒常)">恒常</a> or <a href="alice.html?m=equip3" class="equip3" text="属性出力ギア/SP対応表(コラボ)">コラボ</a> or <a href="alice.html?m=equip2" class="equip2" text="属性出力ギア/SP対応表(アナザー)">アナザー</a> or <a href="alice.html?m=equip4" class="equip4" text="属性出力ギア/SP対応表(ファクター)">ファクター</a> |</archive>
+<archive id="menu">| <a href="alice.html" class="simple" text="属性出力キャラ対応表">通常版</a> | ギア/SP属性版：<a href="alice.html?m=equip" class="equip" text="属性出力ギア/SP対応表(恒常)">恒常</a> or <a href="alice.html?m=equip3" class="equip3" text="属性出力ギア/SP対応表(コラボ)">コラボ</a> or <a href="alice.html?m=equip2" class="equip2" text="属性出力ギア/SP対応表(アナザー)">アナザー</a> or <a href="alice.html?m=equip4" class="equip4" text="属性出力ギア/SP対応表(ファクター)">ファクター</a> or <a href="alice.html?m=equip5" class="equip5" text="属性出力ギア/SP対応表(ステラー)">ステラー</a> |</archive>
 
 <archive id="header">
   <h1>属性出力キャラ対応表</h1>
@@ -2961,6 +2989,52 @@
 
     <li id="tokusei5f">
       <span>ファクター</span>
+    </li>
+  </ul>
+
+
+  <!-- ステラー出力用 -->
+  <ul id="stellar">
+
+    <li id="tokusei1s">
+      <h2>放出特化</h2>
+    </li>
+
+    <li id="tokusei2s">
+      <h2>特質放出</h2>
+    </li>
+
+    <li id="tokusei3s">
+      <h2>変質放出</h2>
+    </li>
+
+    <li id="tokusei4s">
+      <h2>出力変性</h2>
+    </li>
+
+    <li id="tokusei5s">
+      <h2>出力特性</h2>
+    </li>
+
+  </ul>
+
+  <!-- ステラー文字出力用 -->
+  <ul id="stellar2">
+
+    <li id="tokusei1s">
+    </li>
+
+    <li id="tokusei2s">
+    </li>
+
+    <li id="tokusei3s">
+    </li>
+
+    <li id="tokusei4s">
+    </li>
+
+    <li id="tokusei5s">
+      <span>ステラー</span>
     </li>
   </ul>
 </archive>
