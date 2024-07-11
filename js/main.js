@@ -30,7 +30,7 @@ $(function() {
     $('body').attr('id', 'equip4');
     $('h1').text('属性出力ギア/SP対応表(ファクター)');
   }else if(mode == 'equip5'){
-    $('body').attr('id', 'equip4');
+    $('body').attr('id', 'equip5');
     $('h1').text('属性出力ギア/SP対応表(ステラー)');
   }
 
