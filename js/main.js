@@ -119,6 +119,9 @@ $(function() {
               case '/':
                 str1="or.png";
                 break;
+              case '|':
+                str1="enigma.png";
+                break;
               case 'K':
                 str1="kiss.png";
                 break;
